@@ -8,13 +8,9 @@ parent: Projects
     <strong>Project 3:</strong> Path Planning
   </header>
 
-  <p><font size="+2"><strong>Due November 22nd, 2022 at 11:59 PM.</strong></font></p>
-
   <p>In this project, we will write a <strong>path planning algorithm</strong>, which will find a path to any goal in a map. When you've completed the project, you'll be able to find paths like this one:</p>
 
-  <!-- <span class="image main"><img src="/assets/images/p3/bfs_path.png" alt="" style="max-width:600px;"/></span> -->
-
-  <p>This project will have two components: an individual component where you plan paths throughout a map of Michigan, and a group component where you plan paths in a robot map.</p>
+  <span class="image main"><img src="/assets/images/p3/bfs_path.png" alt="" style="max-width:600px;"/></span>
 
   <ul>
     <li><a href="#getting_code">Getting the Code</a>
@@ -22,21 +18,12 @@ parent: Projects
         <li><a href="#replit">Editing the code on Replit</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#submitting">Submitting the Assignment</a>
-      <ul>
-        <li><a href="#grading">Grading Breakdown</a></li>
-      </ul>
-    </li>
 
     <li><a href="#description">Project Description</a>
       <ul>
-        <li><a href="#part1_michigan">Part 1: Path Planning in Michigan</a></li>
-        <li><a href="#part2_robot">Part 2: Path Planning on the Robot</a></li>
         <li><a href="#adv_ext">Advanced Extensions</a></li>
       </ul>
     </li>
-    <li><a href="#website">Project Webpage</a></li>
     <li><a href="#code">Code Overview</a></li>
     <li><a href="#tasks">Task Summary</a></li>
     <li><a href="#adv_ext_summary">Advanced Extensions Summary</a></li>
@@ -46,93 +33,25 @@ parent: Projects
 
   <h2 id="getting_code">Getting the Code</h2>
 
-  <p>For Part 1 of this project, you can find the template code <a href="https://replit.com/team/robotics-102-f22/Planning-in-Michigan">on Replit here</a>.</p>
+  <p>To get the template code for this project, see your course page for the GitHub Classroom assignment link.</p>
 
-  <p>For Part 2 of this project, one repository per team will be created for this project through GitHub Classroom, like in Projects 1 and 2. Both teammates will share ownership of the code and receive credit for writing the code through the license file.</p>
-
-  <p><strong>The invite link to accept the assignment on Github Classroom can be found on Slack.</strong></p>
-
-  <p>
-    The first teammate to accept will need to create a new team. The team must be named <strong>P3 F22 Team &#35;&#35;</strong>.
-    Replace <strong>&#35;&#35;</strong> with the team number assigned to you (for example, P3 F22 Team 01, P3 F22 Team 11, etc.).
-    The next teammate should join the team from the list of existing teams.
-  </p>
-
-  <h3 id="replit">Editing the code on Replit</h3>
-
-  <p>For this project, we have created some tools so that you can develop and test your planning algorithms on Replit, without using the robot. When your code is working, you can then run it on the robot. </p>
-
-  <p>Replit supports cloning, running, and committed changes to GitHub repositories. Since the project repos are private, we have created an empty project on Replit within the Robotics 102 team which you can use to collaborate with your teammates on a private Replit. To run and edit your code on Replit, follow these steps:</p>
-
-  <ol>
-    <li><strong>Connect your Replit account to GitHub</strong> (all teammates). Click on your username on the top left corner of the Replit page and select &quot;Account&quot;. Scroll all the way to the bottom to &quot;Connected Services&quot; and select &quot;Connect&quot; beside the GitHub option.</li>
-    <li><strong>Accept the assignment on GitHub Classroom</strong> (all teammates). This step is just like in Projects 1 and 2.</li>
-    <li><strong>Fork the Replit Project</strong> (one teammate). On our class Replit team, select the project &quot;Project 3: Path Planning&quot; from the list. You will be prompted to join or create a new group. Select the option to create a new group. Make sure you tell your teammate(s) your Replit username.</li>
-    <li><strong>Join the Replit Project</strong> (other teammate(s)). Join the group that your teammate has created by selecting their username.</li>
-    <li><strong>Connect your GitHub repo</strong>. Your new project on Replit should be empty. You will connect it to your existing project repo on GitHub. To do this, click on the Version Control panel and select the option to connect to an existing repo:
-      <span class="image main"><img src="/assets/images/p3/connect_git.png" alt="" style="max-width:600px;"/></span>
-    Paste the address of your repo in the popup that appears and click the button to pull the changes from the repo.
-      <span class="image main"><img src="/assets/images/p3/select_repo.png" alt="" style="max-width:500px;"/></span>
-    </li>
-    <li><strong>Delete the file <code>tmp.txt</code> from the Replit project.</strong> This is there because Replit does not allow empty repositories.</li>
-  </ol>
-
-  <p><strong>All code developed on Replit should be pushed to GitHub.</strong> You can do this using the Version Control tab on the Repl. The instructors will not use Replit to view your code, so you should not submit it on Replit. If you are editing code on the robot, make sure your Replit project stays up to date by pulling new code. You can do this in the Version Control tab.</p>
-
-  <ul class="hint">
-    <li class="icon solid fa-cogs">
-      <strong>Hint:</strong>
-      Replit uses 2 spaces for indentation by default, but our code uses 4 spaces.
-      You can modify the indent size in the Repl to 4 to make it easier to view the project code.
-    </li>
-  </ul>
-
-  <h3 id="license">Completing the License</h3>
-
-  <p>
-    <strong>Modify the LICENSE.txt file to include the names of all teammates.</strong>
-    Make sure the change is committed to your repository.
-    This must be completed in order for your project to be graded, but this time, points are not awarded for completed the license.
-  </p>
+  <p>You should always sign the license for your code by editing the file <code>LICENSE.txt</code>. Replace <code>&lt;COPYRIGHT HOLDER&gt;</code> with the names of all teammates, separated by commas. Replace <code>&lt;YEAR&gt;</code> with the current year.</p>
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
-      <strong id="todo0">P3.0 (0 points):</strong> In the file <code>LICENSE.txt</code>, replace
-      <code>&lt;COPYRIGHT HOLDER&gt;</code> with the names of all teammates, separated by commas. Replace
-      <code>&lt;YEAR&gt;</code> with the current year.
+      <strong id="todo0">P3.0:</strong>
+      In the file <code>LICENSE.txt</code>, replace <code>&lt;COPYRIGHT HOLDER&gt;</code> with the names of all teammates, separated by commas. Replace <code>&lt;YEAR&gt;</code> with the current year.
     </li>
   </ul>
 
-  <hr class="major" />
+  <h3 id="replit">Editing the code on Replit</h3>
 
-  <h2 id="submitting">Submitting the Assignment</h2>
+  <p>Much of the code for this project can be run without using the robot, using a webapp we have made for testing your code. When your code is working, you can then run it on the robot.</p>
 
-  <p>For Part 1 of the assignment, each student should complete the code on Replit individually. Use the <strong>&quot;Submit&quot;</strong> button to submit your assignment.</p>
+  <p>You can use Replit to run your code by connecting your code repository to a Repl. Instructions are available on the <a href="https://docs.replit.com/category/using-git-on-replit">Replit website</a>.</p>
 
-  <p>For Part 2 of the assignment, teammates will be graded together. You should push your code to your GitHub repository, and create a project webpage for your completed project. Include a link to your webpage in the <code>README.md</code> of your repository. For details about what should be on the website, see <a href="#website">Project Website</a>.</p>
+  <p><strong>Warning:</strong> Make sure you are following your class regulations regarding public code if using Replit. Replit free accounts only allow public projects, which would make your project code accessible to anyone on the internet. Follow your instructor's guidance for running this code locally.</p>
 
-  <h3 id="grading">Grading Breakdown</h3>
-
-  <p>This project will be graded as follows:</p>
-  <ul>
-    <li>
-      <strong>Path Planning in Michigan</strong> (5 points)
-      Complete and submit your code to plan paths from one city to the next in Michigan. Your code should work for any start and goal city in the map. It should also work for different graph configurations (e.g. adding new cities).
-      <emph>This portion of the project is completed and graded individually.</emph>
-    </li>
-    <li>
-      <strong>Breadth First Search in the Robot Map:</strong> (5 points)
-      Your code should be pushed to GitHub and tagged. It should be organized and complete. The instructors will run your code to test your .
-    </li>
-    <li>
-      <strong>Robot Path Planning Demo (in-class):</strong> (2 points)
-      Your planning algorithm will be demonstrated on the robot, in class on Demo Day. The robot should navigate from a start location to a goal location given by the instructors.
-    </li>
-    <li>
-      <strong>Website:</strong> (3 points)
-      On your website, include a brief discussion of your implementation (see <a href="#website">reflection questions</a>). For full credit, include multiple examples of maps and start and goal locations in the webapp (you can take screenshots or screen recordings). Include at least one video of your algorithm working sucessfully on the robot.
-    </li>
-  </ul>
 </section>
 
 <section id="description">
@@ -140,139 +59,7 @@ parent: Projects
     <h2><a href="#description">Project Description</a></h2>
   </header>
 
-  <p>This assignment has the following parts:</p>
-
-  <ol>
-    <li><a href="#part1_michigan">Part 1</a>: Path Planning in Michigan</li>
-    <li><a href="#part2_robot">Part 2</a>: Path Planning on the Robot</li>
-  </ol>
-
-  <hr class="major" />
-
-  <h2 id="part1_michigan">Part 1: Path Planning in Michigan</h2>
-
-  <p>
-    The goal of this part of the project is to find a path using the Breadth First Search algorithm through Michigan.
-    The Michigan map we will be using looks like this:
-  </p>
-
-  <span class="image main"><img src="/assets/images/p3/michigan.png" alt="" style="max-width:600px;"/></span>
-
-  <p>
-    The graph data is stored in a text file called <code>mi_graph.txt</code>. It contains a list of cities, which are nodes in the graph, followed by a list of edges between the nodes. The edges are denoted by the names of the two connected cities, followed by the distance in miles between the cities.
-  </p>
-
-  <ul class="hint">
-    <li class="icon solid fa-cogs">
-      <strong>Hint:</strong>
-      You can modify the map (for example, add some cities)!
-      To do this, add the name of the city under where it says <code>NODES</code>.
-      Add the edges connected to the new city under where it says <code>EDGES</code>, following format (one line per edge):
-      <pre><code>[my_new_city] [connected_city] [miles_between_cities]</code></pre>
-      Don't forget to update the numbers beside the headings <code>NODES</code> and <code>EDGES</code> to reflect the total number of nodes and edges respectively.
-    </li>
-  </ul>
-
-  <p>
-    The map data is stored in a struct called <code>Graph</code>, defined for you, which looks like this:
-  </p>
-  <pre><code class="language-cpp">struct Graph
-{
-  std::vector&lt;std::string&gt; data;
-  std::vector&lt;std::vector&lt;int&gt; &gt; edges;
-  std::vector&lt;std::vector&lt;float&gt; &gt; edge_costs;
-
-  // TODO: Add any members you need to the graph.
-};</code></pre>
-
-  <p>
-    The function <code>createGraph("mi_graph.txt")</code> populates a struct of type <code>Graph</code> with the Michigan map data defined in <code>mi_graph.txt</code>.
-    The struct contains a vector of strings <code>data</code>, which stores a list of all the cities.
-    We will use the index of the city in this vector to identify the node.
-    You can get the number of nodes in the graph using <code>data.size()</code>.
-    You can use function <code>nameToIdx("my_city", g.data)</code> to get the index of a city from its name.
-  </p>
-
-  <p>
-    The vectors <code>edges</code> and <code>edge_costs</code> store the edges connecting the node and the distances of those edges respectively.
-    <emph>You should not need to access these directly.</emph>
-    Use functions <code>getNeighbors(idx, g)</code> to get a list of the indices of the neighbors of node at index <code>idx</code>, and <code>getEdgeCosts(idx, g)</code> to get a list of the distances to the neighboring cities.
-  </p>
-
-  <p>
-    <strong>Storing node data:</strong> First, decide how to store the various node data which you need to access in the BFS algorithm.
-    Add data to the <code>Graph</code> struct to store this data.
-    Make sure you store the index of the parent node during the search.
-    The final path will be found by tracing backwards through the parents, starting from the goal node, using function <code>tracePath(goal_idx, g)</code> (where <code>goal_idx</code> is the index of the goal node).
-  </p>
-
-  <ul class="todo">
-    <li class="icon solid fa-laptop-code">
-      <strong id="todo1_1">P3.1.1:</strong>
-      Design a way to store node data needed in BFS.
-      Add members to the <code>Graph</code> struct to store this data.
-    </li>
-  </ul>
-
-  <p>
-    <strong>Initializing node data:</strong>
-    You should start by initializing data for each node of the graph, before the algorithm starts, so you can access and update it during your algorithm. This is done in function <code>initGraph()</code>.
-  </p>
-
-    <ul class="todo">
-    <li class="icon solid fa-laptop-code">
-      <strong id="todo1_2">P3.1.2:</strong>
-      Complete function <code>initGraph()</code>. It should create space to store data for each node in the graph, and initialize any data you might need.
-    </li>
-  </ul>
-
-  <p>
-    <strong>Accessing node data:</strong>
-    For the function <code>tracePath()</code> to work, it should be able to use function <code>getParent(idx, g)</code> to get the index of the parent of the node at <code>idx</code>. Complete the <code>getParent(idx, g)</code> function to access the parent of a node.
-  </p>
-
-  <ul class="todo">
-    <li class="icon solid fa-laptop-code">
-      <strong id="todo1_3">P3.1.3:</strong>
-      Complete function <code>getParent()</code>. It should return the index of the parent node. If the node has no parent, it should return -1.
-    </li>
-  </ul>
-
-  <ul class="hint">
-    <li class="icon solid fa-cogs">
-      <strong>Hint:</strong>
-      If your function <code>initGraph()</code> initializes the parent of all nodes to be -1, your <code>getParent()</code> function will automatically return the correct result for nodes with no parents, without extra logic.
-    </li>
-    <li class="icon solid fa-cogs">
-      <strong>Hint:</strong>
-      The start node should not have a parent.
-    </li>
-  </ul>
-
-  <p>
-    <strong>Breadth First Search:</strong>
-    Complete the function <code>bfs()</code> to find a path from the start to the goal node.
-    Maintain a visit list containing node indices as a queue data structure.
-    Use the function <code>getNeighbors(idx, g)</code> to get the neighbors of node with index <code>idx</code> within graph <code>g</code>.
-    When the goal is found, use the following code to get the path as a vector of node indices.
-    This should work as written if you have maintained the parents of the nodes correctly and implemented <code>getParent()</code>, assuming <code>goal_idx</code> is the index of the goal node.
-  </p>
-
-  <pre><code class="language-cpp">path = tracePath(goal_idx, g);</code></pre>
-
-  <ul class="todo">
-    <li class="icon solid fa-laptop-code">
-      <strong id="todo1_4">P3.1.4:</strong>
-      Complete function <code>bfs(start, goal, g)</code>.
-      It should perform Breadth First Search to find a path from node index <code>start</code> to <code>goal</code> within graph <code>g</code>.
-    </li>
-  </ul>
-
-  <hr class="major" />
-
-  <h2 id="part2_robot">Part 2: Path Planning on the Robot</h2>
-
-  <p>In this part of the project, we will implement Breadth First Search within robot maps. We also provide an advanced extension to implement the <a href="#astar">A-Star search algorithm</a>, as discussed in lecture.</p>
+  <p>We will implement Breadth First Search within robot maps. We also provide an advanced extension to implement the <a href="#astar">A-Star search algorithm</a>, as discussed in lecture.</p>
 
   <p>
     To help you develop your algorithm, we have created a webapp which you can use to test your algorithm.
@@ -296,7 +83,7 @@ parent: Projects
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
-      <strong id="todo2_1">P3.2.1:</strong> In the file <code>graph_utils.cpp</code>, complete functions <code>findNeighbors()</code>.
+      <strong id="todo2_1">P3.1:</strong> In the file <code>graph_utils.cpp</code>, complete functions <code>findNeighbors()</code>.
       It should accept the index of a node and return a vector of indices of neighboring nodes.
       You may use either 4-connected or 8-connected neighbors, as discussed in lab.
     </li>
@@ -333,15 +120,15 @@ make
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
-      <strong id="todo2_2">P3.2.2:</strong>
+      <strong id="todo2_2">P3.2:</strong>
       In the <code>graph_utils.h</code> file, design a data structure to store the cell information and modify <code>GridGraph</code> to add any new member variables accordingly.
     </li>
     <li class="icon solid fa-laptop-code">
-      <strong id="todo2_3">P3.2.3:</strong>
+      <strong id="todo2_3">P3.3:</strong>
       In the <code>graph_utils.cpp</code> file, complete function <code>initGraph()</code> to initialize the cell data. You can assume the graph will be loaded when the function is called.
     </li>
     <li class="icon solid fa-laptop-code">
-      <strong id="todo2_4">P3.2.4:</strong>
+      <strong id="todo2_4">P3.4:</strong>
       In the <code>graph_utils.cpp</code> file, complete function <code>getParent()</code> so it returns the index of the parent of the given cell. If a cell does not have a parent, it should return -1.
     </li>
   </ul>
@@ -381,7 +168,7 @@ return path;
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
-      <strong id="todo2_5">P3.2.5:</strong>
+      <strong id="todo2_5">P3.5:</strong>
       In the <code>graph_search.cpp</code> file, implement Breadth First Search in function <code>breadthFirstSearch()</code>.
     </li>
   </ul>
@@ -401,7 +188,7 @@ return path;
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
-      <strong id="todo2_6">P3.2.6:</strong>
+      <strong id="todo2_6">P3.6:</strong>
       In the <code>robot_plan_path.cpp</code> file, call your path planning function and use the <code>drivePath()</code> function provided to send the path to the robot.
     </li>
   </ul>
@@ -507,34 +294,6 @@ visit_list.erase(visit_list.begin() + min_score_idx);</code></pre>
 
 </section>
 
-<section id="website">
-  <header class="major">
-    <h2><a href="#website">Project Website</a></h2>
-  </header>
-
-  <p>
-    Create a website to demonstrate your implementation of path planning.
-    Add the link to your project page to the <code>README.md</code> file in the root of your repository and push it to GitHub.
-    For a refresher about how to create the website, see the <a href="/projects/a1.html#website">Project 1 description</a>.
-  </p>
-
-  <p>On your project webpage, include multiple images and / or videos showing paths found by your breadth first search algorithm (and by A-Star, if applicable). Include examples of different maps, with different start and goal locations on the webapp. Include at least one video demonstration of your robot following a path and avoiding obstacles (for example, in a maze-like environment) using either BFS or A-Star. Remember to ensure that videos are visible by course staff.</p>
-
-  <p>Include a discussion section on the web page. Consider the following questions:</p>
-  <ol>
-    <li>What are the strengths and limitations of breadth first search? Graph search in general?</li>
-    <li>Does breadth first search always find the shortest path? Does A-Star always find the shortest path?</li>
-    <li>How might you improve the algorithm(s) you implemented? (Include at least one idea)</li>
-    <li>
-      <em>(If you implemented A-Star)</em>
-      In what types of environments is A-Star much faster than BFS? Are there any environments where A-Star is not much faster than BFS?
-    </li>
-  </ol>
-
-  <p>Consider including images or videos whenever possible to illustrate your points. Keep the discussion brief: it should be no longer than one or two paragraphs. If you did not implement A-Star, you may ignore the A-Star questions, or answer based on what we discussed in lecture.</p>
-
-</section>
-
 <section id="code">
   <header class="major">
     <h2><a href="#code">Code Overview</a></h2>
@@ -636,62 +395,35 @@ std::vector&lt;float&gt; obstacle_distances;  // The distance from each cell to 
 
 </section>
 
-
-
   <!-- TASKS -->
-  <section id="tasks">
+<section id="tasks">
   <header class="major">
     <h2><a href="#tasks">Task Summary</a></h2>
   </header>
 
-  <h3>Part 1: Path Planning in Michigan</h3>
-
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
-      <strong><a href="#todo1_1">P3.1.1</a>:</strong>
-      Design a way to store node data needed in BFS.
-      Add members to the <code>Graph</code> struct to store this data.
-    </li>
-    <li class="icon solid fa-laptop-code">
-      <strong><a href="#todo1_2">P3.1.2</a>:</strong>
-      Complete function <code>initGraph()</code>. It should create space to store data for each node in the graph, and initialize any data you might need.
-    </li>
-    <li class="icon solid fa-laptop-code">
-      <strong><a href="#todo1_3">P3.1.3</a>:</strong>
-      Complete function <code>getParent()</code>. It should return the index of the parent node. If the node has no parent, it should return -1.
-    </li>
-    <li class="icon solid fa-laptop-code">
-      <strong><a href="#todo1_4">P3.1.4</a>:</strong>
-      Complete function <code>bfs(start, goal, g)</code>.
-      It should perform Breadth First Search to find a path from node index <code>start</code> to <code>goal</code> within graph <code>g</code>.
-    </li>
-  </ul>
-
-  <h3>Part 2: Path Planning on the Robot</h3>
-
-  <ul class="todo">
-    <li class="icon solid fa-laptop-code">
-      <strong><a href="#todo2_1">P3.2.1</a>:</strong> In the file <code>graph_utils.cpp</code>, complete functions <code>findNeighbors()</code>.
+      <strong><a href="#todo2_1">P3.1</a>:</strong> In the file <code>graph_utils.cpp</code>, complete functions <code>findNeighbors()</code>.
       It should accept the index of a node and return a vector of indices of neighboring nodes.
     </li>
     <li class="icon solid fa-laptop-code">
-      <strong><a href="#todo2_2">P3.2.2</a>:</strong>
+      <strong><a href="#todo2_2">P3.2</a>:</strong>
       In the <code>graph_utils.h</code> file, design a data structure to store the cell information and modify <code>GridGraph</code> to add any new member variables accordingly.
     </li>
     <li class="icon solid fa-laptop-code">
-      <strong><a href="#todo2_3">P3.2.3</a>:</strong>
+      <strong><a href="#todo2_3">P3.3</a>:</strong>
       In the <code>graph_utils.cpp</code> file, complete function <code>initGraph()</code> to initialize the cell data. You can assume the graph will be loaded when the function is called.
     </li>
     <li class="icon solid fa-laptop-code">
-      <strong><a href="#todo2_4">P3.2.4</a>:</strong>
+      <strong><a href="#todo2_4">P3.4</a>:</strong>
       In the <code>graph_utils.cpp</code> file, complete function <code>getParent()</code> so it returns the index of the parent of the given cell. If a cell does not have a parent, it should return -1.
     </li>
     <li class="icon solid fa-laptop-code">
-      <strong><a href="#todo2_5">P3.2.5</a>:</strong>
+      <strong><a href="#todo2_5">P3.5</a>:</strong>
       In the <code>graph_search.cpp</code> file, implement Breadth First Search in function <code>breadthFirstSearch()</code>.
     </li>
     <li class="icon solid fa-laptop-code">
-      <strong><a href="#todo2_6">P3.2.6</a>:</strong>
+      <strong><a href="#todo2_6">P3.6</a>:</strong>
       In the <code>robot_plan_path.cpp</code> file, call your path planning function and use the <code>drivePath()</code> function provided to send the path to the robot.
     </li>
   </ul>
@@ -705,15 +437,15 @@ std::vector&lt;float&gt; obstacle_distances;  // The distance from each cell to 
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
-      <strong><a href="#todoAE_3_i">Advanced Extension P3.i</a> (1 extension point):</strong>
+      <strong><a href="#todoAE_3_i">Advanced Extension P3.i</a>:</strong>
       Implement A-Star path finding.
     </li>
     <li class="icon solid fa-laptop-code">
-      <strong><a href="#todoAE_3_ii">Advanced Extension P3.ii</a> (1 extension point):</strong>
+      <strong><a href="#todoAE_3_ii">Advanced Extension P3.ii</a>:</strong>
       Implement a Manhattan distance transform and use the result to check for collisions during path planning.
     </li>
     <li class="icon solid fa-laptop-code">
-      <strong><a href="#todoAE_3_iii">Advanced Extension P3.iii</a> (1 extension point):</strong>
+      <strong><a href="#todoAE_3_iii">Advanced Extension P3.iii</a>:</strong>
       Implement a Euclidean distance transform and use the result to check for collisions during path planning.
     </li>
   </ul>
