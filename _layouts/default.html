@@ -27,7 +27,7 @@
 
             <!-- Header -->
               <header id="header">
-                <a href="/index.html" class="logo"><strong>Hello, Robot!</strong> Introduction to AI and Programming</a>
+                <a href="/" class="logo"><strong>Hello, Robot!</strong> Introduction to AI and Programming</a>
                 <ul class="icons">
                   <li><a href="https://github.com/HelloRobCourse/" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
                 </ul>
@@ -56,8 +56,8 @@
                   {% assign current_courses = site.courses | where: 'active', true %}
 
                   <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li>
+                    <li><a href="/">Home</a></li>
+                    <!-- <li>
                       {% if page.dtc == true %}
                       <span class="opener active">DTC Bootcamp</span>
                       {% else %}
@@ -70,7 +70,7 @@
                         <li><a href="/dtc-bootcamp/mbot-setup">Guide: MBot Setup</a></li>
                         <li><a href="/dtc-bootcamp/debug-tips">Guide: Debugging Tips</a></li>
                       </ul>
-                    </li>
+                    </li> -->
                     <li>
                       <span class="opener">Current Offerings</span>
                       <ul>
@@ -114,20 +114,32 @@
                       </ul>
                     </li>
                     <li>
-                      {% if page.tutorial == true %}
+                      {% if page.parent == 'Tutorials' %}
                       <span class="opener active">Tutorials</span>
                       {% else %}
                       <span class="opener">Tutorials</span>
                       {% endif %}
                       <ul>
-                        <li><a href="/tutorials/setup.html">Computer Setup</a></li>
-                        <li><a href="/tutorials/git.html">Github</a></li>
-                        <li><a href="/tutorials/replit.html">Replit</a></li>
-                        <li><a href="/tutorials/robot.html">Using the MBot-Omni</a></li>
-                        <li><a href="/tutorials/app.html">Navigation Webapp</a></li>
+                        <li><a href="/tutorials/setup">Computer Setup</a></li>
+                        <li><a href="/tutorials/git">Github</a></li>
+                        <li><a href="/tutorials/replit">Replit</a></li>
+                        <li><a href="/tutorials/robot">Using the MBot-Omni</a></li>
+                        <li><a href="/tutorials/debug-tips">MBot-Omni Debugging Tips</a></li>
+                        <li><a href="/tutorials/app">Navigation Webapp</a></li>
                       </ul>
                     </li>
-                    <li><a href="https://robotics102.github.io/nav-app/">Navigation Webapp</a></li>
+                    <li>
+                      {% if page.parent == 'Staff' %}
+                      <span class="opener active">Staff Guides</span>
+                      {% else %}
+                      <span class="opener">Staff Guides</span>
+                      {% endif %}
+                      <ul>
+                        <li><a href="/staff-guides/mbot-assembly">Guide: MBot Assembly</a></li>
+                        <li><a href="/staff-guides/mbot-setup">Guide: MBot Setup</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="https://robotics102.org/nav-app/">Navigation Webapp</a></li>
                   </ul>
                 </nav>
 

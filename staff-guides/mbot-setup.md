@@ -1,7 +1,7 @@
 ---
 layout: default
-title: MBot Setup - Robotics 102
-dtc: true
+title: MBot Setup - HelloRob
+parent: Staff
 ---
 
 # Tutorial: MBot System Setup

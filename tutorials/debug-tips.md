@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Debugging Tips - Robotics 102
-dtc: true
+title: Debugging Tips - HelloRob
+parent: Tutorials
 ---
 
 # Tutorial: Debugging Tips
@@ -31,11 +31,11 @@ lcm-spy
 
 You should see a window that looks like this:
 
-<span class="image centered"><img src="/assets/images/dtc/debug/lcm-spy.png" alt="" style="max-width:600px;"/></span>
+<span class="image centered"><img src="/assets/images/debug/lcm-spy.png" alt="" style="max-width:600px;"/></span>
 
 You can also double click on a channel to see the data that's being published.
 
-<span class="image centered"><img src="/assets/images/dtc/debug/lcm-spy-details.png" alt="" style="max-width:600px;"/></span>
+<span class="image centered"><img src="/assets/images/debug/lcm-spy-details.png" alt="" style="max-width:600px;"/></span>
 
 <ul class="hint">
     <li class="icon solid fa-cogs"><strong>Hint:</strong> If you don't see the types defined beside each of the channels in LCM Spy, your <code>CLASSPATH</code> variable might not be sent correctly. See the instructions in <a href="https://github.com/MBot-Project-Development/mbot_lcm_base" target="_blank">LCM base</a> repo for how to set it to find the messages.</li>
