@@ -159,26 +159,22 @@ This step will pull all the code utilities for the MBot Web App, SLAM, sensor dr
     ./scripts/install.sh
     ```
 3. **Install the MBot Web App.** The web app is a useful tool for commanding the robot from your laptop's browser.
-    1. The installation requires you to install a program called NPM first. To do this, do:
+    1. Download the latest web app release and unpack it:
         ```bash
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-        source ~/.bashrc  # Reload to apply changes.
+        wget https://github.com/MBot-Project-Development/mbot_web_app/releases/download/v1.0.0/mbot_web_app-v1.0.0.tar.gz
+        tar -xvzf mbot_web_app-v1.0.0.tar.gz
         ```
-        Install the latest version of NodeJS (as of this writing, the latest version is 18):
-        ```bash
-        nvm install 18
-        ```
-        Now you should have the `node` and `npm` command installed. You can check with `node --version` and `npm --version`.
     2. Install the web app dependencies:
         ```bash
-        cd ~/mbot_ws/mbot_web_app/
-        ./scripts/install_nginx.sh
-        ./scripts/install_python_deps.sh
+        cd mbot_web_app-v1.0.0/
+        ./install_nginx.sh
+        ./install_python_deps.sh
         ```
     3. Build and install the app:
         ```bash
-        ./scripts/deploy_app.sh
+        ./deploy_app.sh --no-rebuild
         ```
+    4. It's now safe to delete the folder `mbot_web_app-v1.0.0/` and the tar file `mbot_web_app-v1.0.0.tar.gz`.
 
 The web app should now be available by going to your browser and typing in the robot's IP address.
 
@@ -197,6 +193,13 @@ At this point, if the firmware is flashed and the serial server is running, you 
     ./scripts/install.sh
     ```
     Again, this installs the binaries and services needed to run SLAM and the motor controller.
+
+5. **Install the MBot Bridge and API.** The MBot Bridge includes a server that bridges student code with the MBot software, as well as APIs in C++ and Python. Install it with:
+    ```bash
+    cd ~/mbot_ws/mbot_bridge/
+    ./scripts/install.sh
+    ```
+    This installs the scripts and services needed to run the MBot Bridge Server and installs the MBot API and its dependencies.
 
 ---
 
