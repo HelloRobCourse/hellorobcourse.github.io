@@ -70,7 +70,7 @@ At this stage, the Raspberry Pi is not connected to WiFi so we will need to conf
 3. **Get the system utilities repo on the robot.** We will clone a repo onto the robot which has a number of scripts to install necessary dependencies.
     1. Get the robot's IP address. You will need to use the monitor and keyboard. Open a terminal then type `ifconfig wlan0` to get the IP:
         <span class="image centered"><img src="/assets/images/dtc/robot-ifconfig.png" alt="" style="max-width:500px;"/></span>
-    2. Connect to the robot in a VSCode Remote session from your laptop. Instructions are [here](/tutorials/robot.html#sec_robot_prog).
+    2. Connect to the robot in a VSCode Remote session from your laptop. Instructions are [here](/mbot/programming).
     3. Clone the repo `mbot_sys_utils` onto the robot. Open a terminal in the VSCode remote session, then do:
         ```bash
         git clone https://github.com/MBot-Project-Development/mbot_sys_utils.git
