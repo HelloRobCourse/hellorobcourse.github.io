@@ -60,6 +60,8 @@ The following functions can be used to send robot commands.
 
     Sends a drive command to the robot.
 
+    **Warning:** Once `drive` is called, the robot will continue to drive at the given speed until you tell it to stop! Use `stop` to stop the robot.
+
     Parameters:
     {: .sub-head}
 
@@ -169,6 +171,8 @@ The following functions can be used to send robot commands. None of them return 
   {: .fn}
 
     Sends a drive command to the robot.
+
+    **Warning:** Once `drive` is called, the robot will continue to drive at the given speed until you tell it to stop! Use `stop` to stop the robot.
 
     Parameters:
     {: .sub-head}
