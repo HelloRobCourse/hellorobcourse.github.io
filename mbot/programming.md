@@ -12,6 +12,8 @@ MBot Guide
 
 We will program the robot using VSCode's Remote Development extension. This extension allows us to connect to a remote host in a VSCode window and write code on its filesystem.
 
+When you have completed this guide, check out the [MBot Bridge API documentation](/mbot/bridge-api) to make your robot move!
+
 ### Contents
 {: .no_toc }
 
@@ -40,7 +42,7 @@ First, we need the VSCode Remote Development extension, which will allow us to c
 
 Now we will tell VSCode how to connect to the Raspberry Pi board on the robot. To add the Raspberry Pi as a remote host in VSCode, click on the "Remote Explorer" in the toolbar on the left. Then, select the + to add a new host:
 
-![Add Remote Host](/assets/images/mbot/programming/remote-add-target.png){:style="width:400px;" .centered  .rd-corners}
+![Add Remote Host](/assets/images/mbot/programming/remote-add-target.png){:style="width:400px;" .centered .rd-corners}
 
 In the box that appears, type in the following command:
 ```bash
