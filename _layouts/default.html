@@ -123,9 +123,18 @@
                         <li><a href="/tutorials/setup">Computer Setup</a></li>
                         <li><a href="/tutorials/git">Github</a></li>
                         <li><a href="/tutorials/replit">Replit</a></li>
-                        <li><a href="/tutorials/robot">Using the MBot-Omni</a></li>
-                        <li><a href="/tutorials/debug-tips">MBot-Omni Debugging Tips</a></li>
                         <li><a href="/tutorials/app">Navigation Webapp</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      {% if page.parent == 'MBot' %}
+                      <span class="opener active">MBot Guides</span>
+                      {% else %}
+                      <span class="opener">MBot Guides</span>
+                      {% endif %}
+                      <ul>
+                        <li><a href="/mbot/robot">Using the MBot-Omni</a></li>
+                        <li><a href="/mbot/debug-tips">MBot-Omni Debugging Tips</a></li>
                       </ul>
                     </li>
                     <li>

@@ -1,10 +1,10 @@
 ---
 layout: default
 title: Debugging Tips - HelloRob
-parent: Tutorials
+parent: MBot
 ---
 
-# Tutorial: Debugging Tips
+# MBot Guide: Debugging Tips
 {: .no_toc }
 
 This guide contains various tips for debugging common problems with the robot.

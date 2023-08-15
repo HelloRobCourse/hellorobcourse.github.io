@@ -12,9 +12,5 @@ has_toc: false
 - [Github](/tutorials/git.html)
 - [Replit](/tutorials/replit.html)
 
-## Robot Guides
-- [Using the MBot-Omni](/tutorials/robot.html)
-- [MBot-Omni Debugging Tips](/tutorials/debug-tips)
-
 ## Course Infrastructure
 - [Navigation Webapp](/tutorials/app.html)
