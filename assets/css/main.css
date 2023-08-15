@@ -189,6 +189,12 @@ h1.has-sub {
   text-transform: uppercase;
 }
 
+.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 @media screen and (max-width: 736px) {
   h2 {
@@ -1238,6 +1244,14 @@ input[type="radio"] + label:before {
     font-family: 'Font Awesome 5 Brands'; }
 
 /* Image */
+img {
+  max-width: 100%;
+}
+
+img .rd-corners {
+  border-radius: 0.375em;
+}
+
 .image {
   border-radius: 0.375em;
   border: 0;

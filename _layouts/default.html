@@ -50,13 +50,13 @@
               <!-- Menu -->
                 <nav id="menu">
                   <header class="major">
-                    <h2>Menu</h2>
+                    <h2><a href="/">HelloRob</a></h2>
                   </header>
 
                   {% assign current_courses = site.courses | where: 'active', true %}
 
                   <ul>
-                    <li><a href="/">Home</a></li>
+                    <!-- <li><a href="/">Home</a></li> -->
                     <!-- <li>
                       {% if page.dtc == true %}
                       <span class="opener active">DTC Bootcamp</span>
@@ -133,8 +133,12 @@
                       <span class="opener">MBot Guides</span>
                       {% endif %}
                       <ul>
-                        <li><a href="/mbot/robot">Using the MBot-Omni</a></li>
-                        <li><a href="/mbot/debug-tips">MBot-Omni Debugging Tips</a></li>
+                        <li><a href="/mbot/">Overview</a></li>
+                        <li><a href="/mbot/quick-start">Quick Start</a></li>
+                        <li><a href="/mbot/programming">Programming your Robot</a></li>
+                        <li><a href="/mbot/bridge-api">The MBot Bridge API</a></li>
+                        <li><a href="/mbot/mapping">Mapping & LocalizationI</a></li>
+                        <li><a href="/mbot/debug-tips">Debugging Tips</a></li>
                       </ul>
                     </li>
                     <li>

@@ -4,8 +4,11 @@ title: Debugging Tips - HelloRob
 parent: MBot
 ---
 
-# MBot Guide: Debugging Tips
-{: .no_toc }
+# Debugging Tips
+{: .no_toc .has-sub }
+
+MBot Guide
+{: .sub-head }
 
 This guide contains various tips for debugging common problems with the robot.
 
