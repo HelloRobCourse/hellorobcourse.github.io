@@ -4,14 +4,22 @@ title: MBot Assembly - HelloRob
 parent: Staff
 ---
 
-<header class="main project">
-    <strong>Tutorial:</strong> MBot Assembly
-</header>
+# MBot Assembly
+{: .no_toc .has-sub }
+
+Advanced Guide
+{: .sub-head }
 
 <!-- <span class="image right"><img src="/dtc-bootcamp//assets/images/mbot/assembly/omni.JPG" alt="" /></span> -->
-This guide will walk you through the steps needed to assemble the MBot Omni. The MBot Omni Bot is comprised of 3 sections i.e the [bottom plate](#bottom), [middle plate](#middle) and the [top plate](#top). Each of these plates are assembled separately first, before attaching them together to create the MBot Omni.
+This guide will walk you through the steps needed to assemble the MBot Omni. The MBot Omni Bot is comprised of 3 sections i.e the [bottom plate](#bottom-assembly), [middle plate](#middle-assembly) and the [top plate](#top-assembly). Each of these plates are assembled separately first, before attaching them together to create the MBot Omni.
 
 <span class="image centered"><img src="/assets/images/mbot/assembly/omni.JPG" alt="" style="max-width:300px;"/></span>
+
+### Contents
+{: .no_toc }
+
+* TOC
+{:toc}
 
 ***
 
@@ -188,10 +196,8 @@ This guide will walk you through the steps needed to assemble the MBot Omni. The
 
 ***
 
-
-<header class="major" id="final">
-    <h3><a href="#final">Final Assembly</a></h3>
-</header>
+## Final Assembly
+{: .line}
 
 #### Required Components:
 - 1 X Top Assembly
