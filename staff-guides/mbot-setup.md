@@ -160,12 +160,12 @@ This step will pull all the code utilities for the MBot Web App, SLAM, sensor dr
 3. **Install the MBot Web App.** The web app is a useful tool for commanding the robot from your laptop's browser.
     1. Download the latest web app release and unpack it:
         ```bash
-        wget https://github.com/MBot-Project-Development/mbot_web_app/releases/download/v1.0.0/mbot_web_app-v1.0.0.tar.gz
-        tar -xvzf mbot_web_app-v1.0.0.tar.gz
+        wget https://github.com/MBot-Project-Development/mbot_web_app/releases/download/v1.1.0/mbot_web_app-v1.1.0.tar.gz
+        tar -xvzf mbot_web_app-v1.1.0.tar.gz
         ```
     2. Install the web app dependencies:
         ```bash
-        cd mbot_web_app-v1.0.0/
+        cd mbot_web_app-v1.1.0/
         ./install_nginx.sh
         ./install_python_deps.sh
         ```
@@ -173,7 +173,7 @@ This step will pull all the code utilities for the MBot Web App, SLAM, sensor dr
         ```bash
         ./deploy_app.sh --no-rebuild
         ```
-    4. It's now safe to delete the folder `mbot_web_app-v1.0.0/` and the tar file `mbot_web_app-v1.0.0.tar.gz`.
+    4. It's now safe to delete the folder `mbot_web_app-v1.1.0/` and the tar file `mbot_web_app-v1.1.0.tar.gz`.
 
 The web app should now be available by going to your browser and typing in the robot's IP address.
 
