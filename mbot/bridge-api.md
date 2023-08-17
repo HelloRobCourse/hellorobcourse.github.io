@@ -82,7 +82,7 @@ The following functions can be used to send robot commands.
 
     Resets the robot odometry to zero.
 
-* void MBot::drivePath(const std::vector<std::array<float, 3> >& path)
+* void MBot::drivePath(const std::vector&lt;std::array&lt;float, 3&gt; &gt;& path)
   {: .fn}
 
     Sends a path to the motion controller to follow.
@@ -103,7 +103,7 @@ The following functions can be used to read data from the robot.
 {: .no_toc }
 
 {: .api }
-* void MBot::readLidarScan(std::vector<float>& ranges, std::vector<float>& thetas)
+* void MBot::readLidarScan(std::vector&lt;float&gt;& ranges, std::vector&lt;float&gt;& thetas)
   {: .fn}
 
     Reads the latest Lidar scan from the robot and places the resulting ranges and angles in the vectors `ranges` and `thetas`.
@@ -112,7 +112,7 @@ The following functions can be used to read data from the robot.
 
     **Warning:** Some rays in the scan never return (for example, if there are no obstacles, or the ray bounces off a material and goes in a different direction). If the ray does not return, its range will be zero. Make sure you check for rays with zero range and ignore them.
 
-* std::vector<float> MBot::readOdometry()
+* std::vector&lt;float&gt; MBot::readOdometry()
   {: .fn}
 
     Reads the latest robot pose computed using odometry.
@@ -126,7 +126,7 @@ The following functions can be used to read data from the robot.
 
     A vector with three elements containing the position (in meters) and angle (in radians) of the robot (i.e. `[x, y, theta]`). If there is no odometry data available, a warning will be printed to the screen and the vector returned will have length zero.
 
-* std::vector<float> MBot::readSlamPose()
+* std::vector&lt;float&gt; MBot::readSlamPose()
   {: .fn}
 
     Reads the latest robot pose computed using Simultaneous Localization and Mapping (SLAM).
@@ -144,17 +144,17 @@ The following functions can be used to read data from the robot.
 
 To use the API's robot functions, you must first create a *robot object*. This is done as follows:
 ```python
-from mbot_bridge.api import Robot
+from mbot_bridge.api import MBot
 
 # Initialize the robot.
-my_robot = Robot()
+my_robot = MBot()
 ```
 All the functions in the API will use this robot object.
 
 <ul class="hint">
     <li class="icon solid fa-cogs"><strong>Using this API:</strong> To use the functions below, you should use the object that you initialized previously, followed by a dot, followed by the function and pass it the correct variables. For example, to drive the robot we just declared forward at 0.5 meters per second, do:
     <pre><code class="language-python">my_robot.drive(0.5, 0, 0)</code></pre>
-    Do <i>not</i> use the class name to call the functions! For example, <code>Robot.drive(0.5, 0, 0)</code> will <i>not</i> work. The documentation is written this way to make it clear that these functions come from the Robot class.
+    Do <i>not</i> use the class name to call the functions! For example, <code>MBot.drive(0.5, 0, 0)</code> will <i>not</i> work. The documentation is written this way to make it clear that these functions come from the Robot class.
     </li>
 </ul>
 
@@ -167,7 +167,7 @@ The following functions can be used to send robot commands. None of them return 
 {: .no_toc }
 
 {: .api }
-* Robot.drive(vx, vy, wz)
+* Mbot.drive(vx, vy, wz)
   {: .fn}
 
     Sends a drive command to the robot.
@@ -182,7 +182,7 @@ The following functions can be used to send robot commands. None of them return 
     * **vy**: The y-component of the robot's velocity in meters per second.
     * **wz**: The angular (turning) velocity of the robot in radians per second.
 
-* Robot.stop()
+* Mbot.stop()
   {: .fn}
 
     Stops the robot by sending a zero velocity command.
@@ -191,7 +191,7 @@ The following functions can be used to send robot commands. None of them return 
 
     **Returns:** None
 
-* Robot.reset_odometry()
+* Mbot.reset_odometry()
   {: .fn}
 
     Resets the robot odometry to zero.
@@ -204,7 +204,7 @@ The following functions can be used to read robot commands. None of the reading 
 {: .no_toc }
 
 {: .api }
-* Robot.read_lidar()
+* Mbot.read_lidar()
   {: .fn}
 
     Reads the latest Lidar scan from the robot.
@@ -216,7 +216,7 @@ The following functions can be used to read robot commands. None of the reading 
 
     **Warning:** Some rays in the scan never return (for example, if there are no obstacles, or the ray bounces off a material and goes in a different direction). If the ray does not return, its range will be zero. Make sure you check for rays with zero range and ignore them.
 
-* Robot.read_odometry()
+* Mbot.read_odometry()
   {: .fn}
 
     Reads the latest robot pose computed using odometry.
@@ -230,7 +230,7 @@ The following functions can be used to read robot commands. None of the reading 
 
     A list with three elements containing the position (in meters) and angle (in radians) of the robot (i.e. `[x, y, theta]`). If there is no odometry data available, a warning will be printed to the screen and the list returned will have length zero.
 
-* Robot.read_slam_pose()
+* Mbot.read_slam_pose()
   {: .fn}
 
     Reads the latest robot pose computed using Simultaneous Localization and Mapping (SLAM).
@@ -242,7 +242,7 @@ The following functions can be used to read robot commands. None of the reading 
 
     A list with three elements containing the position (in meters) and angle (in radians) of the robot (i.e. `[x, y, theta]`). If there is no SLAM data available, a warning will be printed to the screen and the list returned will have length zero.
 
-* Robot.read_hostname()
+* Mbot.read_hostname()
   {: .fn}
 
     Reads the robot's hostname.
