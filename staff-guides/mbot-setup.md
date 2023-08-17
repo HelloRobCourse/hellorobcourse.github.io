@@ -146,12 +146,11 @@ At this point, the robot should publish its IP to the registry each time it turn
 
 This step will pull all the code utilities for the MBot Web App, SLAM, sensor drivers, and communication with the Robotics Control Board.
 
-1. **Clone the necessary repos.** There is a script to help you with this in `mbot_sys_utils`. To use it, do:
-    ```bash
-    cd mbot_sys_utils
-    ./setup_workspace.sh ~/mbot_ws
-    ```
-    Note: The script will pull in all the code repos. We will not use all of them in this guide.
+1. **Clone the necessary repos.** You will need the following repos (you will need access to them):
+    * [MBot LCM Base](https://github.com/MBot-Project-Development/mbot_lcm_base){:target="_blank"}
+    * [RP Lidar Driver](https://github.com/MBot-Project-Development/rplidar_lcm_driver){:target="_blank"}
+    * [MBot Autonomy](https://github.com/MBot-Project-Development/mbot_autonomy){:target="_blank"}
+    * [MBot Bridge](https://github.com/MBot-Project-Development/mbot_bridge){:target="_blank"}
 
 2. **Install the base MBot code.** This includes the message types and serial server which communicates between the Robotics Control Board and the RPi using LCM. The install script will compile the code and install it onto the robot. It will also install a service to automatically start the serial server on startup.
     ```bash
