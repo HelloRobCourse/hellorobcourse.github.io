@@ -36,6 +36,7 @@ Check with course staff to confirm the login information for your robot.
 ---
 
 ## Robot Care
+{: .line }
 
 ### Turning the robot on
 
@@ -60,6 +61,7 @@ Each robot should be marked with a unique, three-digit ID, plus a prefix (001, 0
 ---
 
 ## Flashing the SD Card
+{: .line }
 
 To configure a new robot, you must first flash a new SD card with the robot's image. You will need:
 1. A way to read and write to a Micro SD card (you can use a laptop with an SD card slot or a USB adapter),
@@ -69,7 +71,8 @@ To flash the image, follow these instructions:
 
 1. **Download the image.** This might take some time because the file is large. Make sure you have about 4GB available.
 2. **Download [Balena Etcher](https://etcher.balena.io/){:target="_blank"}.** This is a tool for flashing OS images onto SD cards.
-3. **Flash your SD card.** Launch Etcher and insert the SD card into your laptop. Select the correct device from Etcher, and navigate to the image you downloaded. Then press flash. This process can take up to 30 minutes.
+3. **Flash your SD card.** Launch Etcher and insert the SD card into your laptop. Select the correct device from Etcher, and navigate to the image you downloaded. Then press "Flash!". This process can take up to 30 minutes.
+    ![Flash the SD card](/assets/images/mbot/flash_sd.png){:style="width:500px;" .centered  .rd-corners}
 
 If the flash is not successful, you should try again. If it continues to fail, you can try another SD card. If you are using an SD card adapter, ensure that the switch on the adapter is not in "Lock" mode, which will make the SD card read-only.
 
@@ -78,6 +81,7 @@ Next, proceed to the [MBot configuration instructions](#configuring-your-mbot).
 ---
 
 ## Configuring your MBot
+{: .line }
 
 The MBot configuration, including its name, WiFi connection, and IP registry configuration, is controlled by a file called `mbot_config.txt`, which can be accessed directly from its SD card. This makes it easy to update the robot's information on first boot or if something about your configuration changes, without needing to plug a monitor, keyboard, and mouse into your robot.
 
@@ -124,6 +128,7 @@ Your course staff will provide this information to you. You will also need a way
 ---
 
 ## Calibrating your MBot
+{: .line }
 
 Each robot needs to be individually calibrated in order to control it. Once it's calibrated, the firmware can be flashed onto the robot. You will need to flash programs onto the Pico to calibrate and load the firmware onto your robot. To do this, you should connect to the robot using a program called NoMachine, that allows you to view the robot's desktop from your laptop.
 
