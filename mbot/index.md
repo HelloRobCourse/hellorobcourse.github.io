@@ -130,8 +130,9 @@ Your course staff will provide this information to you. You will also need a way
 ## Calibrating your MBot
 {: .line }
 
-Each robot needs to be individually calibrated in order to control it. Once it's calibrated, the firmware can be flashed onto the robot. You will need to flash programs onto the Pico to calibrate and load the firmware onto your robot. To do this, you should connect to the robot using a program called NoMachine, that allows you to view the robot's desktop from your laptop.
+[[MBot Firmware Files](https://drive.google.com/drive/folders/1sVPw5HKwVrWMN5sYUofBw1tnrrkemnmz?usp=drive_link)]
 
+Each robot needs to be individually calibrated in order to control it. Once it's calibrated, the firmware can be flashed onto the robot. You will need to flash programs onto the Pico to calibrate and load the firmware onto your robot. To do this, you should connect to the robot using a program called NoMachine, that allows you to view the robot's desktop from your laptop.
 You will need:
 * The calibration script, `mbot_calibrate_omni.uf2`
 * The MBot firmware, `mbot.uf2`
