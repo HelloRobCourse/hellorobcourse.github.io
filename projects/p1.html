@@ -25,6 +25,15 @@ parent: Projects
     <li><a href="#tasks">Task Summary</a></li>
   </ul>
 
+  <p style="margin-bottom: 0.5em;">Read these instructions for:</p>
+  <div class="switch">
+    <span id="cpp-label" class="active-lang">C++</span>
+    <label class="switch">
+      <input type="checkbox" id="lang-toggle">
+        <span class="slider round"></span>
+    </label>
+    <span id="python-label">Python</span>
+  </div>
 
   <hr class="major" />
 
@@ -52,6 +61,7 @@ parent: Projects
     <h2><a href="#code">Code Overview</a></h2>
   </header>
 
+  <div class="cpp-content">
   <p>In <a href="/projects/p0">Project 0</a>, we compiled our C++ code on Replit. Replit took care of calling the C++ compiler and generating an executable that we could run. This time, we have a bit more code to deal with. The wall follower code will have dependencies on external libraries to drive the robot and read data from the Lidar. We could compile the source code directly by running a similar command to Replit, but the command would be much longer and more complicated. Instead, we'll use a tool called <strong>CMake</strong>. CMake finds all the code and external libraries we need and generates instructions to build the executable. To build the code, in a terminal, type:</p>
 
   <pre><code class="language-bash">cd ~/[my-wall-follower-dir]/build
@@ -60,7 +70,7 @@ make</code></pre>
 
   <p>
     Remember that the code should be cloned and compiled on the Raspberry Pi. This will fail on your computer!
-    You should replace <code>[my-wall-follower-dir]</code> with the name of your wall follower directoy.
+    You should replace <code>[my-wall-follower-dir]</code> with the name of your wall follower directory.
     Let's look at these instructions line by line:
   </p>
 
@@ -110,6 +120,22 @@ make</code></pre>
     </li>
   </ul>
 
+  </div>
+
+  <div class="python-content">
+    <p>The Python code contains two files where you should write your code:</p>
+    <ul>
+      <li>
+        <code>drive_square.py</code>: The template where you will complete the Drive Square task.
+      </li>
+      <li>
+        <code>wall_follower.py</code>: The template where you will complete the Wall Follower.
+      </li>
+    </ul>
+
+    <p>You should use the <a href="/mbot/bridge-api">MBot Bridge API</a> to control the robot and read data.</p>
+  </div>
+
 </section>
 
 <!-- DESCRIPTION -->
@@ -129,21 +155,22 @@ make</code></pre>
 
   <h3 id="sec_square">Part 1: Drive Square</h3>
 
-  <p>We will start by driving the robot in a square without any sensor feedback. For this part, you will write your code in the file <code>src/drive_square.cpp</code>. In the <code>main</code> function, write code to make the robot drive in a 1 meter by 1 meter square three times. The square is not expected to be perfect.</p>
+  <p>We will start by driving the robot in a square without any sensor feedback. For this part, you will write your code in the file <span class="cpp-content"><code>src/drive_square.cpp</code>, in the <code>main</code> function</span><span class="python-content"><code>drive_square.py</code></span>.
+    Write code to make the robot drive in a 1 meter by 1 meter square three times. The square is not expected to be perfect.</p>
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
       <strong id="todo1_1">P1.1 DEMO:</strong>
       Demonstrate your robot driving in a square three times to a member of the course staff.
-      You should write your code in the file <code>drive_square.cpp</code>.
+      You should write your code in the file <span class="cpp-content"><code>src/drive_square.cpp</code></span><span class="python-content"><code>drive_square.py</code></span>.
       Commit and push your changes to GitHub.
     </li>
   </ul>
 
   <ul class="hint">
-    <li class="icon solid fa-cogs"><strong>Hint:</strong> You can use the <code>drive()</code> function together with the <code>sleepFor()</code> function to make the robot drive in one direction for a certain amount of time. To drive in a square, you might drive forward for one second, left for one second, backward for one second, then right for one second.</li>
+    <li class="icon solid fa-cogs"><strong>Hint:</strong> You can use the <code>drive()</code> function together with the <span class="cpp-content"><code>sleepFor()</code></span><span class="python-content"><code>time.sleep()</code></span> function to make the robot drive in one direction for a certain amount of time. To drive in a square, you might drive forward for one second, left for one second, backward for one second, then right for one second.</li>
     <li class="icon solid fa-cogs"><strong>Hint:</strong> Start by writing code to drive the robot in a square once. Then, you can add a <code>for</code> loop to repeat the pattern however many times you would like.</li>
-    <li class="icon solid fa-cogs"><strong>Hint:</strong> It's good practice to create variables in the <code>main</code> function to store constants. For example, you might want to define variables to store the velocity you are driving at, the number of seconds to drive for, and the number of times to repeat the square.</li>
+    <li class="icon solid fa-cogs"><strong>Hint:</strong> It's good practice to create variables in the <span class="cpp-content"><code>main</code> function</span><span class="python-content">main script</span> to store constants. For example, you might want to define variables to store the velocity you are driving at, the number of seconds to drive for, and the number of times to repeat the square.</li>
   </ul>
 
   <h3 id="sec_wall_follow">Part 2: Wall Following</h3>
@@ -154,33 +181,48 @@ make</code></pre>
   </p>
 
   <ol>
-    <li>Find the distance to the nearest wall and the angle where the wall is located (use <code>findMinDist()</code> for this part).</li>
+    <li>Find the distance to the nearest wall and the angle where the wall is located (use <span class="cpp-content"><code>findMinDist()</code></span><span class="python-content"><code>find_min_dist()</code></span> for this part).</li>
     <li>Use the cross product to find a vector pointing parallel to the wall, in the direction the robot should drive.</li>
     <li>Apply a correction to the vector using bang-bang or P-control to move closer to or farther from the wall, depending on the current distance to the wall.</li>
     <li>Convert the vector to a velocity vector and send a velocity command to the robot.</li>
   </ol>
 
-  <p>First, we need to write code to find the distance to the nearest obstacle. Calling the function <code>readLidarScan()</code> fills the <code>ranges</code> vector passed to it with the length, or <em>range</em>, of each ray in the scan in meters. The distance to the nearest obstacle is the range of the shortest ray in the scan.</p>
+  <p>First, we need to write code to find the distance to the nearest obstacle. Calling the function <span class="cpp-content"><code>robot.readLidarScan()</code></span><span class="python-content"><code>robot.read_lidar_scan()</code></span> fills the <code>ranges</code> vector passed to it with the length, or <em>range</em>, of each ray in the scan in meters. The distance to the nearest obstacle is the range of the shortest ray in the scan.</p>
 
-  <p>
-    Complete the provided function, <code>findMinDist()</code>, in <code>src/common/utils.cpp</code> so that it finds the <em>index</em> of the shortest ray. For example, if the smallest range in <code>ranges</code> is the tenth element at index 9, the function should return 9.
-  </p>
+  <div class="cpp-content">
+    <p>
+      Complete the provided function, <code>findMinDist()</code>, in <code>src/common/utils.cpp</code> so that it finds the <em>index</em> of the shortest ray. For example, if the smallest range in <code>ranges</code> is the tenth element at index 9, the function should return 9.
+    </p>
 
-  <ul class="todo">
-    <li class="icon solid fa-laptop-code">
-      <strong id="todo2_1">P1.2.1:</strong> In the file <code>src/common/utils.cpp</code>, complete the function <code>findMinDist()</code> so that it finds the minimum length ray in the given scan. Return the <em>index</em> of this ray.
-    </li>
-  </ul>
+    <ul class="todo">
+      <li class="icon solid fa-laptop-code">
+        <strong id="todo2_1">P1.2.1:</strong> In the file <code>src/common/utils.cpp</code>, complete the function <code>findMinDist()</code> so that it finds the minimum length ray in the given scan. Return the <em>index</em> of this ray.
+      </li>
+    </ul>
+  </div>
+
+  <div class="python-content">
+    <p>
+      Complete the provided function, <code>find_min_dist()</code>, in <code>wall_follower.py</code> so that it finds the length and angle of the shortest ray. For example, if the smallest range in <code>ranges</code> is the tenth element at index 9, the function should return the tuple <code>ranges[9], thetas[9]</code>.
+    </p>
+
+    <ul class="todo">
+      <li class="icon solid fa-laptop-code">
+        <strong id="todo2_1">P1.2.1:</strong> In the file <code>wall_follower.py</code>, complete the function <code>find_min_dist()</code> so that it finds the minimum length ray in the given scan. Return the length and angle of this ray.
+      </li>
+    </ul>
+  </div>
+
 
   <ul class="hint">
     <li class="icon solid fa-cogs"><strong>Hint:</strong> Remember to ignore rays with zero range when finding the minimum range value. Rays with zero range are invalid. If you forget to check for invalid rays, the minimum range will always be zero.</li>
   </ul>
 
-  <p>Next, you will need to write the cross product function, in the provided function in <code>src/common/utils.cpp</code>. </p>
+  <p>Next, you will need to write the cross product function, in the provided function in <span class="cpp-content"><code>src/common/utils.cpp</code></span><span class="python-content"><code>wall_follower.py</code></span>. </p>
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
-      <strong id="todo2_2">P1.2.2:</strong> In the file <code>src/common/utils.cpp</code>, complete the function <code>crossProduct()</code> to find the cross product between two vectors. The input should be two vectors of length 3, corresponding to the x, y, and z components of the input vectors. The output should be a vector of length 3 corresponding to the components of the resulting cross product.
+      <strong id="todo2_2">P1.2.2:</strong> In the file <span class="cpp-content"><code>src/common/utils.cpp</code></span><span class="python-content"><code>wall_follower.py</code></span>, complete the function <span class="cpp-content"><code>crossProduct()</code></span><span class="python-content"><code>cross_product()</code></span> to find the cross product between two vectors. The input should be two vectors of length 3, corresponding to the x, y, and z components of the input vectors. The output should be a vector of length 3 corresponding to the components of the resulting cross product.
     </li>
   </ul>
 
@@ -188,15 +230,15 @@ make</code></pre>
     <li class="icon solid fa-cogs"><strong>Hint:</strong> For a vector <code>v</code>, the x component should be stored in <code>v[0]</code>, the y component should be stored in <code>v[1]</code>, and the z component should be stored in <code>v[2]</code>.</li>
   </ul>
 
-  <p>Once both functions are completed, you are ready to write your wall follower. The wall follower code should go in <code>src/wall_follower.cpp</code>. You can implement either the bang-bang controller or the P-controller discussed in class.</p>
+  <p>Once both functions are completed, you are ready to write your wall follower. The wall follower code should go in <span class="cpp-content"><code>src/wall_follower.cpp</code></span><span class="python-content"><code>wall_follower.py</code></span>. You can implement either the bang-bang controller or the P-controller discussed in class.</p>
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
       <strong><a href="#todo2_3">P1.2.3</a> DEMO:</strong>
       Demonstrate that your robot can follow a wall to course staff.
       For full points, your robot should successfully complete two laps around a course defined on Demo Day.
-      You should write your code in the file <code>wall_follower.cpp</code> using the procedure outlined above.
-      You will need to use your functions <code>findMinDist()</code> and <code>crossProduct()</code>.
+      You should write your code in the file <span class="cpp-content"><code>src/wall_follower.cpp</code></span><span class="python-content"><code>wall_follower.py</code></span> using the procedure outlined above.
+      You will need to use your functions <span class="cpp-content"><code>findMinDist()</code></span><span class="python-content"><code>find_min_dist()</code></span> and <span class="cpp-content"><code>crossProduct()</code></span><span class="python-content"><code>cross_product()</code></span>.
     </li>
   </ul>
 
@@ -220,21 +262,23 @@ make</code></pre>
     <li class="icon solid fa-laptop-code">
       <strong><a href="#todo1_1">P1.1</a> DEMO:</strong>
       Demonstrate your robot driving in a square three times to a member of the course staff.
-      You should write your code in the file <code>drive_square.cpp</code>.
+      You should write your code in the file <span class="cpp-content"><code>src/drive_square.cpp</code></span><span class="python-content"><code>drive_square.py</code></span>.
       Commit and push your changes to GitHub.
     </li>
     <li class="icon solid fa-laptop-code">
       <strong><a href="#todo2_1">P1.2.1</a>:</strong>
-      In the file <code>src/common/utils.cpp</code>, complete the function <code>findMinDist()</code> so that it finds the minimum length ray in the given scan. Return the <em>index</em> of this ray.
+      In the file <span class="cpp-content"><code>src/common/utils.cpp</code></span><span class="python-content"><code>wall_follower.py</code></span>, complete the function <span class="cpp-content"><code>findMinDist()</code></span><span class="python-content"><code>find_min_dist()</code></span> so that it finds the minimum length ray in the given scan.
+      <span class="cpp-content">Return the <em>index</em> of this ray.</span>
+      <span class="python-content">Return the length and angle of this ray.</span>
     </li>
     <li class="icon solid fa-laptop-code">
       <strong><a href="#todo2_2">P1.2.2</a>:</strong>
-      In the file <code>src/common/utils.cpp</code>, complete the function <code>crossProduct()</code> to find the cross product between two vectors.
+      In the file <span class="cpp-content"><code>src/common/utils.cpp</code></span><span class="python-content"><code>wall_follower.py</code></span>, complete the function <span class="cpp-content"><code>crossProduct()</code></span><span class="python-content"><code>cross_product()</code></span> to find the cross product between two vectors.
     </li>
     <li class="icon solid fa-laptop-code">
       <strong><a href="#todo2_3">P1.2.3</a> DEMO:</strong>
-      In the file <code>wall_follower.cpp</code>, write a program that follows a wall using the procedure outlined above.
-      You will need to use your functions <code>findMinDist()</code> and <code>crossProduct()</code>.
+      In the file <span class="cpp-content"><code>wall_follower.cpp</code></span><span class="python-content"><code>wall_follower.py</code></span>, write a program that follows a wall using the procedure outlined above.
+      You will need to use your functions <span class="cpp-content"><code>findMinDist()</code></span><span class="python-content"><code>find_min_dist()</code></span> and <span class="cpp-content"><code>crossProduct()</code></span><span class="python-content"><code>cross_product()</code></span>.
       For full points, your robot will need to successfully complete 2 laps around the course defined by the course staff.
     </li>
   </ul>
