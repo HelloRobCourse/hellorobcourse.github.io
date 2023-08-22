@@ -1115,7 +1115,7 @@ header.main.project {
   display: none;
 }
 .cpp-content {
-  display: inline-block;
+  display: inline;
 }
 
 /* Form */

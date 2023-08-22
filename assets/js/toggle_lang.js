@@ -6,11 +6,11 @@ document.getElementById('lang-toggle').onchange = function() {
     var i;
 
     for (i = 0; i < cppElements.length; i++) {
-        cppElements[i].style.display = this.checked ? 'none' : 'inline-block';
+        cppElements[i].style.display = this.checked ? 'none' : 'inline';
     }
 
     for (i = 0; i < pythonElements.length; i++) {
-        pythonElements[i].style.display = this.checked ? 'inline-block' : 'none';
+        pythonElements[i].style.display = this.checked ? 'inline' : 'none';
     }
 
     // Add active labels to the labels.
