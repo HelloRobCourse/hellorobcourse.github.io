@@ -158,5 +158,7 @@ You will need:
     5. Open the Pico device folder in NoMachine. Drag and drop the script `mbot_calibrate_omni.uf2` into the folder. The Pico will reboot automatically, and will then run its calibration routine. *Don't touch the robot while it does this procedure.*
 
 3. **Flash the MBot Firmware onto the Pico.** The calibration script will have saved parameters onto the Pico's memory. We can now flash the firmware that will run on the Pico during operation. We will be repeating the flashing procedure.
-    1. Repeat steps 1-3 from the calibration instructions to put the Pico into flashing mode.
+    1. Repeat steps 2.1-2.3 from the calibration instructions to put the Pico into flashing mode.
     2. Open the Pico device folder in NoMachine. Drag and drop the script `mbot.uf2` into the folder. The Pico will reboot automatically.
+
+4. **Test the calibration.** Follow the [Quick Start Guide](/mbot/quick-start) to make sure your robot can drive around!
