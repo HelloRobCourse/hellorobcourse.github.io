@@ -21,12 +21,14 @@ The MBot Bridge API is a simple interface to control the robot and read its data
 ---
 
 ## MBot Bridge Server
+{: .line }
 
 The API communicates with the *MBot Bridge Server*, which acts as a bridge between your code and the MBot's programs. The MBot Bridge Server should be running before you run any code that uses the API. On an image configured for a HelloRob course, the bridge should be running automatically.
 
 ---
 
 ## MBot C++ API
+{: .line }
 
 To use the API's robot functions, you must first create a *robot object*. This is done as follows:
 ```cpp
@@ -141,6 +143,7 @@ The following functions can be used to read data from the robot.
 ---
 
 ## MBot Python API
+{: .line }
 
 To use the API's robot functions, you must first create a *robot object*. This is done as follows:
 ```python
