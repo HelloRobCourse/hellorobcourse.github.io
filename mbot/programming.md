@@ -40,7 +40,7 @@ First, we need the VSCode Remote Development extension, which will allow us to c
 
 ### 2. Add the Raspberry Pi as a remote host
 
-Now we will tell VSCode how to connect to the Raspberry Pi board on the robot. To add the Raspberry Pi as a remote host in VSCode, click on the "Remote Explorer" in the toolbar on the left. Then, select the + to add a new host:
+Now we will tell VSCode how to connect to the Raspberry Pi board on the robot. To add the Raspberry Pi as a remote host in VSCode, click on the "Remote Explorer" in the toolbar on the left. Then, select the + beside "SSH" to add a new host:
 
 ![Add Remote Host](/assets/images/mbot/programming/remote-add-target.png){:style="width:400px;" .centered .rd-corners}
 
