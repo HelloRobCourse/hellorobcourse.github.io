@@ -151,8 +151,10 @@ You will need:
     *Do not run the calibration script with the MBot on a table!!*
 
     1. First, unplug the Robotics Control Board by disconnecting the barrel plug from the battery (leave the USB that powers the RPi plugged in). Also unplug the USB that connects the Pico to the Raspberry Pi.
-    2. We will now put the Pico in flashing mode. Hold down the white `BOOTSEL` button on the Pico board (it's near the USB port). With the button held down, plug the Pico's USB cord back into the Raspberry Pi. Then release the button. The Pico should now show up as a device in NoMachine (see below).
-        <span class="image centered"><img src="/assets/images/dtc/pop-up-plug-in.png" alt="" style="max-width:800px;"/></span>
+    2. We will now put the Pico in flashing mode. Hold down the `BOOTSEL` button on the Pico board (it's near the USB port). The location of the button depends on the version of your Robotics Control Board. The button is highlighted in red for each board in this photo:
+        ![BOOTSEL Button](/assets/images/mbot/bootsel-location.jpg){:style="width:800px;" .centered .rd-corners}
+        With the button held down, plug the Pico's USB cord back into the Raspberry Pi. Then release the button. The Pico should now show up as a device in NoMachine (see below).
+        ![Pico device in NoMachine](/assets/images/dtc/pop-up-plug-in.png){:style="width:800px;" .centered .rd-corners}
     3. Plug the barrel plug that powers the Robotics Control Board back into the battery.
     4. Place the MBot on the floor in a spot with at least 2 feet of clear space all around the robot.
     5. Open the Pico device folder in NoMachine. Drag and drop the script `mbot_calibrate_omni.uf2` into the folder. The Pico will reboot automatically, and will then run its calibration routine. *Don't touch the robot while it does this procedure.*
