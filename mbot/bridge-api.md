@@ -70,7 +70,7 @@ The following functions can be used to send robot commands.
     * **vy**: The y-component of the robot's velocity in meters per second.
     * **wz**: The angular (turning) velocity of the robot in radians per second.
 
-* void MBot::stop() const
+* void MBot::stop()
   {: .fn}
 
     Stops the robot by sending a zero velocity command.

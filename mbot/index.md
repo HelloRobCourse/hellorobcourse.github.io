@@ -140,7 +140,10 @@ You will need:
 * Your robot's IP, from your course's MBot IP registry
 
 1. **Get the Pico firmware.** *Note:* The firmware files you need are included on the desktop of the images for the course.
-    1. Connect to the MBot in NoMachine. You will need the robot's IP, which you can get from the MBot IP registry from your course.
+    1. Connect to the MBot in NoMachine. You will need the robot's IP, which you can get from the MBot IP registry from your course. To connect in NoMachine, first, add the robot as a new host with a descriptive name and the robot's IP as "Host":
+        ![NoMachine Add Host](/assets/images/mbot/nomachine-add-host.jpg){:style="width:800px;" .centered .rd-corners}
+        Then, connect to the robot in NoMachine using the robot's *username* and *password* (the default username is `mbot` and the password is `i<3robots!`):
+        ![NoMachine Connect Host](/assets/images/mbot/nomachine-login.jpg){:style="width:800px;" .centered .rd-corners}
     2. Download the MBot firmware from [here](https://drive.google.com/drive/folders/1sVPw5HKwVrWMN5sYUofBw1tnrrkemnmz?usp=drive_link){:target="_blank"}. You will need the `mbot_calibrate_omni.uf2` and `mbot.uf2` files. Downloading the tests is optional.
     3. Drag and drop the two files from your laptop to the robot's desktop using NoMachine.
 
