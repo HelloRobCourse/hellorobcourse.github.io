@@ -119,27 +119,7 @@ At this point, the robot should publish its IP to the registry each time it turn
 ## Step 3: Calibrating and Flashing the MBot
 {: .line}
 
-1. **Get the Pico firmware.**
-    1. Connect to the MBot in NoMachine. You will need the robot's IP, which you can get from the [MBot IP registry](https://github.com/MBot-Project-Development/mbot_ip_registry).
-    2. Download the MBot firmware from [here](https://drive.google.com/drive/folders/11_80nXbH66nH3hYHewc8GNmNH3505_qj?usp=drive_link). You will need the `mbot_calibrate_omni.uf2` and `mbot.uf2` files. Downloading the tests is optional.
-    3. Drag and drop the two files from your laptop to the robot's desktop using NoMachine.
-
-2. **Calibrate the MBot.** We will now flash the calibration script onto the Pico to calibrate it before we flash it.
-
-    The calibration script detects the motor and encoder polarity and then calibrates the motor coefficients. The robot will move around for this step so you will need clear space on the floor (preferably on the same type of surface that you plan to use the robots on).
-
-    *Do not run the calibration script with the MBot on a table!!*
-
-    1. First, unplug the Robotics Control Board by disconnecting the barrel plug from the battery (leave the USB that powers the RPi plugged in). Also unplug the USB that connects the Pico to the Raspberry Pi.
-    2. We will now put the Pico in flashing mode. Hold down the white `BOOTSEL` button on the Pico board (it's near the USB port). With the button held down, plug the Pico's USB cord back into the Raspberry Pi. Then release the button. The Pico should now show up as a device in NoMachine (see below).
-        <span class="image centered"><img src="/assets/images/dtc/pop-up-plug-in.png" alt="" style="max-width:800px;"/></span>
-    3. Plug the barrel plug that powers the Robotics Control Board back into the battery.
-    4. Place the MBot on the floor in a spot with at least 2 feet of clear space all around the robot.
-    5. Open the Pico device folder in NoMachine. Drag and drop the script `mbot_calibrate_omni.uf2` into the folder. The Pico will reboot automatically, and will then run its calibration routine. *Don't touch the robot while it does this procedure.*
-
-3. **Flash the MBot Firmware onto the Pico.** The calibration script will have saved parameters onto the Pico's memory. We can now flash the firmware that will run on the Pico during operation. We will be repeating the flashing procedure.
-    1. Repeat steps 1-3 from the calibration instructions to put the Pico into flashing mode.
-    2. Open the Pico device folder in NoMachine. Drag and drop the script `mbot.uf2` into the folder. The Pico will reboot automatically.
+Calibrate and then flash your robot following the instructions [here](/mbot/#calibrating-your-mbot).
 
 ## Step 4: Install the MBot Code
 {: .line}

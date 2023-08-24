@@ -130,7 +130,7 @@ Your course staff will provide this information to you. You will also need a way
 ## Calibrating your MBot
 {: .line }
 
-[[MBot Firmware Files](https://drive.google.com/drive/folders/1sVPw5HKwVrWMN5sYUofBw1tnrrkemnmz?usp=drive_link)]
+[[MBot Firmware Files](https://drive.google.com/drive/folders/1sVPw5HKwVrWMN5sYUofBw1tnrrkemnmz?usp=drive_link){:target="_blank"}]
 
 Each robot needs to be individually calibrated in order to control it. Once it's calibrated, the firmware can be flashed onto the robot. You will need to flash programs onto the Pico to calibrate and load the firmware onto your robot. To do this, you should connect to the robot using a program called NoMachine, that allows you to view the robot's desktop from your laptop.
 You will need:
@@ -167,3 +167,5 @@ You will need:
     2. Open the Pico device folder in NoMachine. Drag and drop the script `mbot.uf2` into the folder. The Pico will reboot automatically.
 
 4. **Test the calibration.** Follow the [Quick Start Guide](/mbot/quick-start) to make sure your robot can drive around!
+
+**Something not right?** If your robot doesn't drive properly, you may have a hardware issue. See the [debugging tips](/mbot/debug-tips#motor-or-encoder-issues) to check for hardware issues.
