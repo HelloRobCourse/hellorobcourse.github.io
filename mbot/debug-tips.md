@@ -19,6 +19,65 @@ This guide contains various tips for debugging common problems with the robot.
 {:toc}
 
 ---
+## Motor or Encoder Issues
+{: .line}
+### Checking Motors
+
+If for some reason your MBot is not moving correctly, ensure that you have properly carried out the [calibration steps](/staff-guides/mbot-setup#step-3-calibrating-and-flashing-the-mbot) in th Staff Guide. During the calibration process the MBot should spin on the spot, first counter-clock wise and then clockwise as show in this [video](https://photos.app.goo.gl/1F4xvWK1iZG65LPg8). If you notice any other behavior follow these steps in order to determine the cause of the problem. 
+
+**NOTE**: Disconnect the Lidar USB cable from the Raspberry Pi before continuing. 
+
+1. **Verify Motor Mounts**: At times the motors might come loose from the mounts, for example like this:
+    <span class="image centered"><img src="/assets/images/debug/loosemotor.gif" alt="" style="max-width:200px;"/></span>
+    
+    If this is the case, take off the wheels from the motor and tighten the screws that secure the motor in the mount.  
+    <span class="image centered"><img src="/assets/images/debug/motorscrews.jpg" alt="" style="max-width:200px;"/></span>
+
+2. **Verify Wheel Hub Placement**: Ensure that there is a gap between the wheel hub and screws of the motor mount. Having no gap will cause the hub to rub against the screw hindering the motors from turning properly. If this is the case, you will have to loosen the screws on the hubs and pull out the wheels a little bit to create a gap. 
+    <span class="image centered"><img src="/assets/images/debug/wheelspacing.png" alt="" style="max-width:600px;"/></span>
+
+3. **Verify Encoder & Magnet Placement**: Sometimes the Encoder on the back of the motor might bend causing the friction between the PCB and magnet. Ensure the ecoder is flat and that there is a small gap between the magnet and the PCB. You may have to use the pliers to pull out the magnets away from the PCB.
+    <span class="image centered"><img src="/assets/images/debug/bentencoder.png" alt="" style="max-width:600px;"/></span>
+4. **Verify Motor Harness Housing**: Sometimes the wires of the motor harness might come loose from the black housing. This will cause an open circuit in the motor harness causing the motors to behave improperly. If this is the case, pull the harness from the encoders and pull the in the loose wires back into the housing. Check all 3 motors harnesses before moving on. 
+    <span class="image centered"><img src="/assets/images/debug/loosewireharness.png" alt="" style="max-width:600px;"/></span>
+
+
+5. **Tighten the Omniwheel Screws**: Ensure that the 4 screws holding the pair of omniwheels are secured properly. Do this for all 3 wheels. 
+    <span class="image centered"><img src="/assets/images/debug/wheelscrews.jpg" alt="" style="max-width:200px;"/></span>
+      
+
+6. **Run Motor Test Program**: Download the `mbot_motor_test.uf2` file from [here](https://drive.google.com/drive/folders/11_80nXbH66nH3hYHewc8GNmNH3505_qj). Flash this to the pico and place your MBot upside down. Instructions on how to flash the Pico can be found [here](/staff-guides/mbot-setup#step-3-calibrating-and-flashing-the-mbot). This program will test the functionality of 3 motors, one at a time by spining them back and forth like this:  
+  
+    <span class="image centered"><img src="/assets/images/debug/mbotmotortest.gif" alt="" style="max-width:600px;"/></span>
+
+    If any of motors fail to spin, you most likely have a faulty motor. Replace this motor and repeat the Motor Test Program step. 
+
+
+### Checking Encoders
+If all the motors are working correctly and the MBot still does not move correctly, you might have a faulty encoder. Follow these steps in order to find out which encoder on your MBot is not working correctly.  
+
+1. **Flashing Encoder Test Program**: Download the `mbot_encoder_test.uf2` file from [here](https://drive.google.com/drive/folders/11_80nXbH66nH3hYHewc8GNmNH3505_qj). Flash this to the pico and place your MBot upside down. Instructions on how to flash the Pico can be found [here](/staff-guides/mbot-setup#step-3-calibrating-and-flashing-the-mbot).   
+
+2. **Open a Terminal in NoMachine**: Once you have logged into your MBot using NoMachine, open up a terminal. This is where we will test all the ecoders. 
+
+3. **Start minicom**: In the terminal type `minicom -D /dev/mbot_tty` and press enter. This will bring up the following screen:
+  
+    <span class="image centered"><img src="/assets/images/debug/minicomencoder.png" alt="" style="max-width:600px;"/></span>
+
+4. **Reading Encoder Values**: You will notice there are 6 numbers on the screens. The first 3 numbers represent the delta values of each of the encoders i.e. the instantaneous change in the encoders values. While the last 3 numbers represent the total ticks for each of the encoders.  
+
+    <span class="image centered"><img src="/assets/images/debug/minicomencodervalues.png" alt="" style="max-width:600px;"/></span>
+
+5. **Testing the Delta values of the Encoders**: One by one, rotate each wheel manually and carefully observe the changing values in the terminal. As you rotate a wheel, you will notice that the delta value will change and then drop back to zero. If you rotate the wheel in the opposite direction, you will notice that the delta values increases in opposite (negative or positive) value before dropping to zero.  
+
+6. **Testing the total ticks of the Encoders**: Rotate the wheel again and notice the total ticks value. This value increase and accumulates as you continue to rotate, unlike the delta values. Now rotate the wheel in the opposite direction and you should see the value drecease (or increase) back to zero. 
+
+[You can watch this video](https://photos.app.goo.gl/475CXuh7fRVHMS9d8) which shows the behavior of steps 5 & 6. If you do not see this on your MBot, then you have a faulty encoder and you will have to replace the both the motor and the encoder. 
+
+ 
+
+
+---
 
 ## Viewing LCM Channels
 {: .line}
