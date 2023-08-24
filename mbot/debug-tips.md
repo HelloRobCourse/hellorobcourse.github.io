@@ -57,12 +57,14 @@ where all of `[SERVICE-NAME]` is replaced with the name of the service. All rele
 
 You can look at the logs of a service with:
 ```bash
-sudo journalctl -u [SERVICE-NAME].service
+sudo journalctl -b -u [SERVICE-NAME].service
 ```
-Add `-b` to the end of the above command to only see the logs generated for the current boot (otherwise, it will show you logs from however many sessions it is storing).
+This will show you all the log messages for the service for the current boot (otherwise, it will show you logs from however many sessions it is storing).
 
 <ul class="hint">
-    <li class="icon solid fa-cogs"><strong>Hint:</strong> When seeking debugging help, copy or screenshot the full output of the system status message for the relevant services, including any logged info, and send it to the instructors.</li>
+    <li class="icon solid fa-cogs"><strong>Hint:</strong> When seeking debugging help, run this command:
+    <pre class="language-bash"><code>sudo journalctl -b > ~/Desktop/out.txt</code></pre>
+    Then download file <code>~/Desktop/out.txt</code> onto your computer and send it to staff along with a description of your problem. This will contain all the system logs for your bot.</li>
 </ul>
 
 ### Networking Services
@@ -79,5 +81,6 @@ The following services run the code that the robot needs. The service of interes
 
 * `mbot-lcm-serial.service`: This runs the server that communicates between the RPi and the Pico. Check this service if the wheels aren't responding to drive commands or if you can't read the odometry.
 * `mbot-rplidar-driver.service`: This controls the Lidar driver. Check this service if SLAM isn't working or if you can't read Lidar data.
-* `mbot-slam.service`; This runs SLAM. Check this service if SLAM is not responding.
+* `mbot-bridge.service`: This runs the MBot Bridge server needed to use the [MBot Bridge API](/mbot/bridge-api). Check this service if you are getting errors about websocket connections when using the API.
+* `mbot-slam.service`: This runs SLAM. Check this service if SLAM is not responding.
 * `mbot-motion-controller.service`: This generates motion commands to follow paths. Check this if you are publishing a path but the robot is not following it correctly.
