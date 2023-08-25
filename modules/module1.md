@@ -2,6 +2,7 @@
 layout: default
 title: Module 1 - HelloRob
 parent: Modules
+lang-toggle: true
 ---
 
 # Feedback Control
