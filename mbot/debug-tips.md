@@ -30,15 +30,17 @@ If for some reason your MBot is not moving correctly, ensure that you have prope
 1. **Verify Motor Mounts**: At times the motors might come loose from the mounts, for example like this:
     <span class="image centered"><img src="/assets/images/debug/loosemotor.gif" alt="" style="max-width:200px;"/></span>
 
-    If this is the case, take off the wheels from the motor and tighten the screws that secure the motor in the mount.
+    If this is the case, take the wheels off from the motor and tighten the screws that secure the motor in the mount.
+
+
     <span class="image centered"><img src="/assets/images/debug/motorscrews.jpg" alt="" style="max-width:200px;"/></span>
 
-2. **Verify Wheel Hub Placement**: Ensure that there is a gap between the wheel hub and screws of the motor mount. Having no gap will cause the hub to rub against the screw hindering the motors from turning properly. If this is the case, you will have to loosen the screws on the hubs and pull out the wheels a little bit to create a gap.
+2. **Verify Wheel Hub Placement**: Ensure that there is a gap between the wheel hub and screws of the motor mount. Having no gap will cause the hub to rub against the screws hindering the motors from turning properly. If this is the case, you will have to loosen the screws on the hubs and pull out the wheels a little bit to create a gap.
     <span class="image centered"><img src="/assets/images/debug/wheelspacing.png" alt="" style="max-width:600px;"/></span>
 
-3. **Verify Encoder & Magnet Placement**: Sometimes the Encoder on the back of the motor might bend causing the friction between the PCB and magnet. Ensure the ecoder is flat and that there is a small gap between the magnet and the PCB. You may have to use the pliers to pull out the magnets away from the PCB.
+3. **Verify Encoder & Magnet Placement**: Sometimes the Encoder on the back of the motors might bend causing the friction between the PCB and magnet. Ensure the ecoder is flat and that there is a small gap between the magnet and the PCB. You may have to use the pliers to pull out the magnets away from the PCB.
     <span class="image centered"><img src="/assets/images/debug/bentencoder.png" alt="" style="max-width:600px;"/></span>
-4. **Verify Motor Harness Housing**: Sometimes the wires of the motor harness might come loose from the black housing. This will cause an open circuit in the motor harness causing the motors to behave improperly. If this is the case, pull the harness from the encoders and pull the in the loose wires back into the housing. Check all 3 motors harnesses before moving on.
+4. **Verify Motor Harness Housing**: Sometimes the wires of the motor harness might come loose from the black housing. This will cause an open circuit in the motor harness causing the motors to behave improperly. If this is the case, disconnect the harness from the encoders and push in the loose wires back into the housing. Check all 3 motors harnesses before moving on.
     <span class="image centered"><img src="/assets/images/debug/loosewireharness.png" alt="" style="max-width:600px;"/></span>
 
 
@@ -58,7 +60,7 @@ If all the motors are working correctly and the MBot still does not move correct
 
 1. **Flashing Encoder Test Program**: Download the `mbot_encoder_test.uf2` file from [here](https://drive.google.com/drive/folders/1sVPw5HKwVrWMN5sYUofBw1tnrrkemnmz?usp=drive_link){:target="_blank"}. Flash this to the pico and place your MBot upside down. Instructions on how to flash the Pico can be found [here](/mbot/#calibrating-your-mbot).
 
-2. **Open a Terminal in NoMachine**: Once you have logged into your MBot using NoMachine, open up a terminal. This is where we will test all the ecoders.
+2. **Open a Terminal in NoMachine**: Once you have logged into your MBot using NoMachine, open up a terminal. This is where we will test all the encoders.
 
 3. **Start minicom**: In the terminal type `minicom -D /dev/mbot_tty` and press enter. This will bring up the following screen:
 
