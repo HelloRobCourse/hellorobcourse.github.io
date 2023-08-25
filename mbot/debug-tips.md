@@ -23,7 +23,7 @@ This guide contains various tips for debugging common problems with the robot.
 {: .line}
 ### Checking Motors
 
-If for some reason your MBot is not moving correctly, ensure that you have properly carried out the [calibration steps](/mbot/#calibrating-your-mbot){:target="_blank"} in the MBot Calibration Guide. During the calibration process the MBot should spin on the spot, first counter-clock wise and then clockwise as show in this [video](https://photos.app.goo.gl/1F4xvWK1iZG65LPg8){:target="_blank"}. If you notice any other behavior follow these steps in order to determine the cause of the problem.
+If for some reason your MBot is not moving correctly, ensure that you have properly carried out the [calibration steps](/mbot/#calibrating-your-mbot){:target="_blank"} in the MBot Calibration Guide. During the calibration process the MBot should spin on the spot, first counter-clock wise and then clockwise as show in this [video](https://youtu.be/Fl2M0zanTJc){:target="_blank"}. If you notice any other behavior follow these steps in order to determine the cause of the problem.
 
 **NOTE**: Disconnect the Lidar USB cable from the Raspberry Pi before continuing.
 
