@@ -30,6 +30,20 @@ Module 1
 
 ---
 
+## Guides & Tutorials
+{: .line}
+
+The following guides and tutorials will be helpful for completing the checkpoints for this module and Project 1.
+
+1. [Robot Quick Start](/mbot/quick-start): Getting up and running using your robot.
+    If this is the first time you are using your robot and it has not been set up, take a look at the setup guides in the [MBot Overview](/mbot/).
+2. [Installing VSCode](/tutorials/setup): Setting up VSCode on your computer.
+3. [GitHub](/tutorials/git): We will use GitHub to store all of the code for this course.
+4. [Programming the Robot](/mbot/programming): You can program your robot from your computer using VSCode.
+5. [The MBot Bridge API](/mbot/bridge-api): You will use these functions to read data from your robot and control it.
+
+---
+
 ## Checkpoint: Follow Me!
 {: .line}
 

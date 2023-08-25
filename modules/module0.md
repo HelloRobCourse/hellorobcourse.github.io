@@ -31,3 +31,9 @@ All activities in this section are on Replit. A Replit tutorial is available [he
 | Branching and Iterators  [[Lecture Video](https://www.youtube.com/watch?v=W9g1TxN35Vs), [Slides](https://drive.google.com/file/d/1zwA0EzbwH-yCbDLOflduf7Ur37MDywqP/view?usp=sharing)] | *Practice (optional)* [Replit link](https://replit.com/team/rob-102-dtc-s23/Practice-Branching-and-Loops)                         |
 | Vectors and Structs  [[Lecture Video](https://www.youtube.com/watch?v=4Hfr6zcVHFo), [Slides](https://drive.google.com/file/d/1e5n7GW69icHEU6NihUd4I7p7vlNpd9zk/view?usp=sharing)] | Find Minimum Ray Activity [Slides](https://drive.google.com/file/d/13Aqc1r66qfUMmdPK2UgdAkL7VdonYnHN/view?usp=sharing), [Replit link](https://replit.com/team/rob-102-dtc-s23/Find-Minimum-Ray) <br/> *Practice (optional)* [Replit link](https://replit.com/team/rob-102-dtc-s23/Practice-Vectors)                                   |
 
+## Guides & Tutorials
+{: .line}
+
+The following guides and tutorials will be helpful for completing the checkpoints for this module and Project 0.
+
+1. [Replit Tutorial](/tutorials/replit): We will write all the code in this module on Replit, an online tool for writing and running code.
