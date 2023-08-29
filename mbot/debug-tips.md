@@ -49,6 +49,7 @@ If you replace the Robot Control Board, you will have [recalibrate and reflash t
 If you are toggling localization on and then it is immediately toggling off again, something is going wrong with SLAM. Check the following, in this order:
 1. **Is your Lidar plugged in?** SLAM needs the Lidar scan to work!
 2. **Can you drive your robot?** If not, it is likely that odometry is not working either, and SLAM needs odometry to work. See ["The robot won't drive"](#the-robot-wont-drive) to fix it.
+
 Lidar spinning and Robot Control Board working but SLAM still isn't working? Try these steps:
 3. **Restart your robot.** If any program got into a funny state or crashed, a reboot will fix it. If the problem persists, follow the next steps.
 4. [**Check the logs and services**](#checking-service-status). These instructions also tell you how to get a log to send to course staff for help if your problems persist.
