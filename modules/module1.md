@@ -27,7 +27,7 @@ Module 1
 | ------| ----------- |
 | Feedback Control [[Lecture Video](https://youtu.be/yFcaiv0wIvU){:target="_blank"}, [Slides](https://drive.google.com/file/d/1mT4xoq5fWkaoWRUSRflYfRnUQ7a2Y_Tu/view?usp=drive_link){:target="_blank"}] | [Follow Me (1D)](#1d-follow-me) |
 | Omnidrive Geometry [[Lecture Video](https://youtu.be/c04v1iEPJto){:target="_blank"}, [Slides](https://drive.google.com/file/d/1urDDViXqMxtSHxQDybJ_uTMAksDW9Agf/view?usp=drive_link){:target="_blank"}] | [Follow Me (2D)](#2d-follow-me) |
-| Wall Following [Coming Soon] | [Project 1](/projects/p1) |
+| Wall Following [[Lecture Video](https://youtu.be/6k1EWADWj_g){:target="_blank"}, [Slides](https://drive.google.com/file/d/1jMyjGNgmjF4-OH_yAPWLPCkvXuov9Cnt/view?usp=drive_link){:target="_blank"}] | [Project 1](/projects/p1) |
 
 ---
 
