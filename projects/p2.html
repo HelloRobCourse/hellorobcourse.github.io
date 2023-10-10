@@ -9,8 +9,7 @@ parent: Projects
   </header>
 
   <p>
-    <!-- <span class="image right"><img src="/assets/images/p1/wall_follow.png" alt=""/></span> -->
-    In this project, you will program the MBot-Omni to autonomously navigate to a goal while avoiding obstacles using the Bug Algorithm.
+    In this project, you will program the MBot-Omni to autonomously navigate to a goal while avoiding obstacles.
   </p>
 
   <ul>
@@ -48,18 +47,16 @@ parent: Projects
     <h2><a href="#project">Project Description</a></h2>
   </header>
 
-    <p>In this project, we will implement our first autonomous navigation algorithm: the Bug 0 Algorithm.</p>
-
     <p>
-      The Bug Algorithm navigates by driving towards the goal, while checking for obstacles in the path.
-      If the robot encounters an obstacle while driving to the goal, it drives around the obstacle until the path to the goal is clear again.
-      We will drive around around obstacles using a Wall Follower, with the same algorithm as in <a href="/projects/p1">Project 1</a>.
+      In this project, we will implement an autonomous navigation algorithm. The lectures in <a href="/modules/module2">Module 2</a> describe an algorithm called the Bug Algorithm. You can implement this algorithm as describe in this lecture, or implement an algorithm of your own. An example of the bug navigation algorithm in action can be found below.
     </p>
-
-    <p>To program the robot, we will use the <a href="/mbot/bridge-api">MBot Bridge API</a>.</p>
 
     <p>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/WvheWNQ9LaU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </p>
+
+    <p>
+      You should use the robot's odometry to get the position. You may reuse your wall follower algorithm from <a href="/projects/p1">Project 1</a>. To program the robot, we will use the <a href="/mbot/bridge-api">MBot Bridge API</a>.
     </p>
 
     <h3 id="robot_hits_the_spot">Robot Hits the Spot</h3>
@@ -78,7 +75,7 @@ parent: Projects
 
     <ul class="todo">
       <li class="icon solid fa-laptop-code">
-        <strong id="todo1">P2.1 Robot Hits the Spot (4 points):</strong>
+        <strong id="todo1">P2.1 Robot Hits the Spot:</strong>
         Write an algorithm that drives the robot to a desired goal pose.
         You should implement this algorithm in the function <code>driveToPose()</code> in the file <code>hit_the_spot.cpp</code>.
         To get full points for this task, you should demo your robot driving to a series of goals given by course staff.
@@ -89,56 +86,39 @@ parent: Projects
     <h3 id="bug">Bug Navigation</h3>
 
     <p>
-      Once we can drive to a goal location, we will encorporate avoiding obstacles using Wall Following.
-      We will implement the Bug 0 Algorithm as a State Machine which has three states: drive towards the goal, wall follow around obstacles, and reached goal.
-      The algorithm continues until the goal is reached, doing the following at each iteration:
+      Once we can drive to a goal location, we must encorporate avoiding obstacles. You should develop an algorithm using a State Machine (see <a href="/modules/module2">Module 2</a>).
+      <!-- We will implement the Bug 0 Algorithm as a State Machine which has three states: drive towards the goal, wall follow around obstacles, and reached goal.
+      The algorithm continues until the goal is reached, doing the following at each iteration: -->
     </p>
 
-    <ol>
+    <!-- <ol>
       <li>Check whether the robot has reached the goal, or whether it should be in the drive to goal state or the wall following state.</li>
       <li>If the robot has reached the goal, terminate the program.</li>
       <li>Otherwise, compute the velocity command which drives towards the goal <i>OR</i> follows the obstacle, depending on the state.</li>
       <li>Send the command to the robot.</li>
-    </ol>
+    </ol> -->
 
     <p>
-      First, you will need to determine which state your robot is in.
-      If the path to the goal is obstructed, the robot should be in a wall following state.
-      In Project 1, we wrote a function to find the minimum ray in the Lidar scan.
-      This time, we want to know if there is an obstacle along the path to the goal.
-      You should complete the function <code>findMinRayInSlice()</code> which will tell us the minimum ray in a specific slice of the Lidar scan which points in the direction of our go.
+      Your algorithm should start by determining which state to be in. For example, if the path to the goal is obstructed, the robot should avoid the obstacle.
     </p>
 
     <ul class="todo">
 
       <li class="icon solid fa-laptop-code">
-        <strong id="todo2">P2.2 (1 point):</strong>
-        Complete the function <code>findMinRayInSlice()</code> which finds the index of the minimum ray in a slice of the Lidar scan.
-        The slice should be centered around <code>target_angle</code>, passed as input to the function.
-        The slice should encompass rays within <code>slice_size</code> radians of <code>target_angle</code>.
+        <strong id="todo2">P2.2:</strong>
+        Write out your autonomous navigation algorithm and submit it to course staff. Consider using pseudocode and state machine diagrams to describe in detail how the algorithm will work.
       </li>
     </ul>
 
-    <ul class="hint">
-      <li class="icon solid fa-cogs">
-        <strong>Hint:</strong>
-        You can reuse parts of your function <code>findMinRay()</code> from Project 1.
-      </li>
-      <li class="icon solid fa-cogs">
-        <strong>Hint:</strong>
-        The function <code>wrapAngle()</code> will be helpful.
-      </li>
-    </ul>
-
-    <p>
+    <!-- <p>
       Use the function <code>findMinRayInSlice()</code> to determine which state the robot is in.
       Print out the state of the robot at each iteration of the algorithm.
-    </p>
+    </p> -->
 
     <ul class="todo">
       <li class="icon solid fa-laptop-code">
-        <strong id="todo3">P2.3 (1 point):</strong>
-        Determine the state of the robot at each iteration and print the current state to the screen.
+        <strong id="todo3">P2.3:</strong>
+        Write code to determine the state of the robot at each iteration and print the current state to the screen.
         Course staff should be able to read the output to ensure your bug navigation is correctly transitioning between states.
       </li>
     </ul>
@@ -150,6 +130,19 @@ parent: Projects
       </li>
     </ul>
 
+    <p>In Project 1, we wrote a function to find the minimum ray in the Lidar scan.
+      This time, we want to know if there is an obstacle along the path to the goal.
+      The template code includes a function <code>findMinRayInSlice()</code> which will tell us the minimum ray in a specific slice of the Lidar scan. You may use this function to determine whether there is an obstacle in the direction of the goal.</p>
+
+    <ul class="hint">
+      <li class="icon solid fa-cogs">
+        <strong>Hint:</strong>
+        We have provided the function <code>findMinRayInSlice()</code> which finds the index of the minimum ray in a slice of the Lidar scan.
+        The slice is centered around <code>target_angle</code>, passed as input to the function.
+        The slice encompasses rays within <code>slice_size</code> radians of <code>target_angle</code>. You can use this function to determine if there is an obstacle in the path to the goal.
+      </li>
+    </ul>
+
     <p>
       You should now have the tools to complete your bug navigation, using the steps outlined above.
       Write your algorithm in the file <code>bug_navigation.cpp</code>.
@@ -158,7 +151,7 @@ parent: Projects
 
     <ul class="todo">
       <li class="icon solid fa-laptop-code">
-        <strong id="todo4">P2.4 Bug Navigation Demo (5 points):</strong>
+        <strong id="todo4">P2.4 Bug Navigation Demo:</strong>
         In the file <code>bug_navigation.cpp</code>, write a program that drives to a goal location and avoids obstacles following the procedure outlined above.
         For full points, your robot will need to drive to a goal given by course staff.
         Staff will test 2-3 runs of your bug navigation.
@@ -241,9 +234,7 @@ make</code></pre>
     </li>
     <li class="icon solid fa-laptop-code">
       <strong id="todo2">P2.2:</strong>
-      Complete the function <code>findMinRayInSlice()</code> which finds the index of the minimum ray in a slice of the Lidar scan.
-        The slice should be centered around <code>target_angle</code>, passed as input to the function.
-        The slice should encompass rays within <code>slice_size</code> radians of <code>target_angle</code>.
+      Write out your autonomous navigation algorithm and submit it to course staff. Consider using pseudocode and state machine diagrams to describe in detail how the algorithm will work.
     </li>
     <li class="icon solid fa-laptop-code">
       <strong id="todo3">P2.3:</strong>
