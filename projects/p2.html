@@ -142,9 +142,7 @@ lang-toggle: true
       </li>
     </ul>
 
-    <h4>Detecting Obstacles</h4>
-
-
+    <h4 id="detecting-obstacles">Detecting Obstacles</h4>
 
     <p>In Project 1, we wrote a function to find the minimum ray in the Lidar scan.
       This time, we want to know if there is an obstacle along the path to the goal.
@@ -244,6 +242,9 @@ make</code></pre>
     <li class="icon solid fa-cogs">
       <code>float wrapAngle(float angle)</code>: Wrap an angle in the range [-pi, pi]. This function returns the wrapped angle.
     </li>
+    <li class="icon solid fa-cogs">
+      <code>int findMinDistInSlice(const std::vector<float>& ranges, const std::vector<float>& thetas, float target_angle, float slice_size)</code>: Finds the index of the minimum ray in the scan in the slice around <code>target_angle</code> of width <code>slice_size</code>. See <a href="#detecting-obstacles">Detecting Obstacles</a> for more details.
+    </li>
   </ul>
 
   </div>
@@ -255,7 +256,7 @@ make</code></pre>
         <code>hit_the_spot.py</code>: The template where you will complete the Hit the Spot task, part 1 of this project.
       </li>
       <li>
-        <code>but_navigation.py</code>: The template where you will complete the Bug Navigation.
+        <code>bug_navigation.py</code>: The template where you will complete the Bug Navigation.
       </li>
     </ul>
 
