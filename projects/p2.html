@@ -1,6 +1,8 @@
 ---
 layout: default
+title: Project 2 - HelloRob
 parent: Projects
+lang-toggle: true
 ---
 
 <section>
@@ -19,6 +21,16 @@ parent: Projects
     <li><a href="#tasks">Task Summary</a></li>
     <li><a href="#ad_ext">Advanced Extensions</a></li>
   </ul>
+
+  <p style="margin-bottom: 0.5em;">Read these instructions for:</p>
+  <div class="switch">
+    <span id="cpp-label" class="active-lang">C++</span>
+    <label class="switch">
+      <input type="checkbox" id="lang-toggle">
+        <span class="slider round"></span>
+    </label>
+    <span id="python-label">Python</span>
+  </div>
 
   <hr class="major" />
 
@@ -77,7 +89,9 @@ parent: Projects
       <li class="icon solid fa-laptop-code">
         <strong id="todo1">P2.1 Robot Hits the Spot:</strong>
         Write an algorithm that drives the robot to a desired goal pose.
-        You should implement this algorithm in the function <code>driveToPose()</code> in the file <code>hit_the_spot.cpp</code>.
+        You should implement this algorithm in the function
+        <span class="cpp-content"><code>driveToPose()</code> in the file <code>hit_the_spot.cpp</code></span>
+        <span class="python-content"><code>drive_to_pose()</code> in the file <code>hit_the_spot.py</code></span>.
         To get full points for this task, you should demo your robot driving to a series of goals given by course staff.
         Print the robot's pose after each goal has been reached.
       </li>
@@ -130,6 +144,8 @@ parent: Projects
       </li>
     </ul>
 
+    <div class="cpp-content">
+
     <p>In Project 1, we wrote a function to find the minimum ray in the Lidar scan.
       This time, we want to know if there is an obstacle along the path to the goal.
       The template code includes a function <code>findMinRayInSlice()</code> which will tell us the minimum ray in a specific slice of the Lidar scan. You may use this function to determine whether there is an obstacle in the direction of the goal.</p>
@@ -143,16 +159,18 @@ parent: Projects
       </li>
     </ul>
 
+    </div>
+
     <p>
-      You should now have the tools to complete your bug navigation, using the steps outlined above.
-      Write your algorithm in the file <code>bug_navigation.cpp</code>.
+      You should now have the tools to complete your bug navigation.
+      Write your algorithm in the file <span class="cpp-content"><code>bug_navigation.cpp</code></span><span class="python-content"><code>bug_navigation.py</code></span>.
       The code should ask the user for <code>x</code>, <code>y</code>, and <code>theta</code> values for the goal, and drive to the given pose.
     </p>
 
     <ul class="todo">
       <li class="icon solid fa-laptop-code">
         <strong id="todo4">P2.4 Bug Navigation Demo:</strong>
-        In the file <code>bug_navigation.cpp</code>, write a program that drives to a goal location and avoids obstacles following the procedure outlined above.
+        In the file <span class="cpp-content"><code>bug_navigation.cpp</code></span><span class="python-content"><code>bug_navigation.py</code></span>, write a program that drives to a goal location and avoids obstacles following the procedure outlined above.
         For full points, your robot will need to drive to a goal given by course staff.
         Staff will test 2-3 runs of your bug navigation.
       </li>
@@ -165,6 +183,7 @@ parent: Projects
     <h2><a href="#code">Code Overview</a></h2>
   </header>
 
+  <div class="cpp-content">
   <p>
     For Project 2, we will compile and run our code the same way as in <a href="/projects/p1">Project 1</a>.
     To build the code, in a terminal, type:
@@ -211,6 +230,29 @@ make</code></pre>
     </li>
   </ul>
 
+  </div>
+
+  <div class="python-content">
+    <p>The Python code contains two files where you should write your code:</p>
+    <ul>
+      <li>
+        <code>hit_the_spot.py</code>: The template where you will complete the Hit the Spot task, part 1 of this project.
+      </li>
+      <li>
+        <code>but_navigation.py</code>: The template where you will complete the Bug Navigation.
+      </li>
+    </ul>
+
+    <p>You should use the <a href="/mbot/bridge-api">MBot Bridge API</a> to control the robot and read data.</p>
+
+    <ul class="hint">
+      <li class="icon solid fa-cogs">
+        <strong>Hint:</strong>
+        You may reuse any provided function from Project 1 that you find useful.
+      </li>
+    </ul>
+  </div>
+
 </section>
 
 <!-- TASKS -->
@@ -228,7 +270,8 @@ make</code></pre>
     <li class="icon solid fa-laptop-code">
       <strong id="todo1">P2.1 Robot Hits the Spot Demo:</strong>
       Write an algorithm that drives the robot to a desired goal pose.
-      You should implement this algorithm in the function <code>driveToPose()</code> in the file <code>hit_the_spot.cpp</code>.
+      You should implement this algorithm in the function <span class="cpp-content"><code>driveToPose()</code> in the file <code>hit_the_spot.cpp</code></span>
+      <span class="python-content"><code>drive_to_pose()</code> in the file <code>hit_the_spot.py</code></span>.
       To get full points for this task, you should demo your robot driving to a series of goals given by course staff.
       Print the robot's pose after each goal has been reached.
     </li>
@@ -243,7 +286,7 @@ make</code></pre>
     </li>
     <li class="icon solid fa-laptop-code">
       <strong id="todo4">P2.4 Bug Navigation Demo:</strong>
-      In the file <code>bug_navigation.cpp</code>, write a program that drives to a goal location and avoids obstacles following the procedure outlined above.
+      In the file <span class="cpp-content"><code>bug_navigation.cpp</code></span><span class="python-content"><code>bug_navigation.py</code></span>, write a program that drives to a goal location and avoids obstacles following the procedure outlined above.
       For full points, your robot will need to drive to a goal given given by course staff.
       Staff will test 2-3 runs of your bug navigation.
     </li>
