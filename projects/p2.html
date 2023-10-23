@@ -97,8 +97,6 @@ lang-toggle: true
       </li>
     </ul>
 
-    <h3 id="bug">Bug Navigation</h3>
-
     <p>
       Once we can drive to a goal location, we must encorporate avoiding obstacles. You should develop an algorithm using a State Machine (see <a href="/modules/module2">Module 2</a>).
       <!-- We will implement the Bug 0 Algorithm as a State Machine which has three states: drive towards the goal, wall follow around obstacles, and reached goal.
@@ -144,22 +142,40 @@ lang-toggle: true
       </li>
     </ul>
 
-    <div class="cpp-content">
+    <h4>Detecting Obstacles</h4>
+
+
 
     <p>In Project 1, we wrote a function to find the minimum ray in the Lidar scan.
       This time, we want to know if there is an obstacle along the path to the goal.
-      The template code includes a function <code>findMinRayInSlice()</code> which will tell us the minimum ray in a specific slice of the Lidar scan. You may use this function to determine whether there is an obstacle in the direction of the goal.</p>
+      We can use the same minimum ray technique to do this, with some modification.
+    </p>
+
+    <p>Consider the example in the photo below. We only need to check whether there is an obstacle in the direction we need to drive to get to the goal, shown by the orange arrow. But, we will want to check the rays in the slice around this arrow too, in case there is an obstacle not quite along the ray, like in the photo. We can look at the minimum ray <i>in the slice around the direction we want to travel</i> to determine whether the path is obstructed. In this example, the pink ray is the shortest. If this ray is too short, we will want to switch to obstacle avoidance mode.</p>
+
+    <span class="image main"><img src="/assets/images/p2/find_min_in_slice_prob.jpg" alt="" style="max-width:400px;"/></span>
+
+    <div class="cpp-content">
+      <p>The template code includes a function <code>findMinRayInSlice()</code> which will tell us the minimum ray in a specific slice of the Lidar scan. You may use this function to determine whether there is an obstacle in the direction of the goal.</p>
+    </div>
 
     <ul class="hint">
       <li class="icon solid fa-cogs">
-        <strong>Hint:</strong>
-        We have provided the function <code>findMinRayInSlice()</code> which finds the index of the minimum ray in a slice of the Lidar scan.
-        The slice is centered around <code>target_angle</code>, passed as input to the function.
-        The slice encompasses rays within <code>slice_size</code> radians of <code>target_angle</code>. You can use this function to determine if there is an obstacle in the path to the goal.
+
+        <div class="cpp-content">
+          <p><strong>Hint:</strong> We have provided the function <code>findMinRayInSlice()</code> which finds the index of the minimum ray in a slice of the Lidar scan. The function is defined as follows:</p>
+
+          <p><code>int findMinDistInSlice(const std::vector<float>& ranges, const std::vector<float>& thetas,
+            float target_angle, float slice_size)</code></p>
+
+          <p>The function takes in the Lidar ranges and angles, and the target angle and slice size. It returns the index of the minimum ray in the slice. The slice encompasses rays within <code>slice_size</code> radians of <code>target_angle</code>. See below:</p>
+        </div>
+        <div class="python-content">
+          <p><strong>Hint:</strong> You may want to write a function <code>find_min_ray_in_slice()</code> which takes in the Lidar rangles and angles, and the target angle and slice size, and finds the minimum ray in the slice, like below:</p>
+        </div>
+        <span class="image main"><img src="/assets/images/p2/find_min_in_slice.png" alt="" style="max-width:400px;"/></span>
       </li>
     </ul>
-
-    </div>
 
     <p>
       You should now have the tools to complete your bug navigation.
