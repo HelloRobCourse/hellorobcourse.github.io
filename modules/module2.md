@@ -26,7 +26,7 @@ Module 2
 | ------| ----------- |
 | State Machines & Bug Navigation [[Lecture Video](https://youtu.be/4wwOCFol9mQ){:target="_blank"}, [Slides](https://drive.google.com/file/d/1Dd67LYB47rOk8Soq7XubMR9GuhKUgfeM/view?usp=sharing){:target="_blank"}] | [Super Mario State Machine](#checkpoint-super-mario-state-machine) |
 | Coordinate Frames [[Lecture Video](https://youtu.be/mgDlW3UxXts){:target="_blank"}, [Slides](https://drive.google.com/file/d/1W0i6nqkzXUWdTYAS6NN1-8ODAtk1-gMf/view?usp=drive_link){:target="_blank"}] | [P2.1: Robot Hits the Spot](/projects/p2#robot_hits_the_spot) |
-| Odometry [*Coming Soon!*] |  |
+| Odometry [[Lecture Video](https://youtu.be/NTM9kBL93Dw){:target="_blank"}, [Slides](https://drive.google.com/file/d/1z86z5lVRztW3tdrix1rrrX6iIBferN2H/view?usp=share_link){:target="_blank"}] |  |
 
 ---
 
