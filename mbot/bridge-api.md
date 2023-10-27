@@ -170,7 +170,7 @@ The following functions can be used to send robot commands. None of them return 
 {: .no_toc }
 
 {: .api }
-* Mbot.drive(vx, vy, wz)
+* MBot.drive(vx, vy, wz)
   {: .fn}
 
     Sends a drive command to the robot.
@@ -185,7 +185,7 @@ The following functions can be used to send robot commands. None of them return 
     * **vy**: The y-component of the robot's velocity in meters per second.
     * **wz**: The angular (turning) velocity of the robot in radians per second.
 
-* Mbot.stop()
+* MBot.stop()
   {: .fn}
 
     Stops the robot by sending a zero velocity command.
@@ -194,7 +194,7 @@ The following functions can be used to send robot commands. None of them return 
 
     **Returns:** None
 
-* Mbot.reset_odometry()
+* MBot.reset_odometry()
   {: .fn}
 
     Resets the robot odometry to zero.
@@ -207,7 +207,7 @@ The following functions can be used to read robot commands. None of the reading 
 {: .no_toc }
 
 {: .api }
-* Mbot.read_lidar()
+* MBot.read_lidar()
   {: .fn}
 
     Reads the latest Lidar scan from the robot.
@@ -219,7 +219,7 @@ The following functions can be used to read robot commands. None of the reading 
 
     **Warning:** Some rays in the scan never return (for example, if there are no obstacles, or the ray bounces off a material and goes in a different direction). If the ray does not return, its range will be zero. Make sure you check for rays with zero range and ignore them.
 
-* Mbot.read_odometry()
+* MBot.read_odometry()
   {: .fn}
 
     Reads the latest robot pose computed using odometry.
@@ -233,7 +233,7 @@ The following functions can be used to read robot commands. None of the reading 
 
     A list with three elements containing the position (in meters) and angle (in radians) of the robot (i.e. `[x, y, theta]`). If there is no odometry data available, a warning will be printed to the screen and the list returned will have length zero.
 
-* Mbot.read_slam_pose()
+* MBot.read_slam_pose()
   {: .fn}
 
     Reads the latest robot pose computed using Simultaneous Localization and Mapping (SLAM).
@@ -245,7 +245,7 @@ The following functions can be used to read robot commands. None of the reading 
 
     A list with three elements containing the position (in meters) and angle (in radians) of the robot (i.e. `[x, y, theta]`). If there is no SLAM data available, a warning will be printed to the screen and the list returned will have length zero.
 
-* Mbot.read_hostname()
+* MBot.read_hostname()
   {: .fn}
 
     Reads the robot's hostname.
