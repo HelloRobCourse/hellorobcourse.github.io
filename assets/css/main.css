@@ -1639,6 +1639,13 @@ ul.hint {
       margin: 0.5em 0;
     }
 
+  ul.fa-ul {
+    margin-left: 0;
+  }
+  ul.fa-ul > li > span.fa-li {
+    left: 0;
+  }
+
 /* HINT */
 ul.link-box {
   background: #c4ddf5;
