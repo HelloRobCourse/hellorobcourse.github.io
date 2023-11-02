@@ -1,6 +1,8 @@
 ---
 layout: default
+title: Project 3 - HelloRob
 parent: Projects
+lang-toggle: true
 ---
 
 <section>
@@ -28,6 +30,16 @@ parent: Projects
     <li><a href="#tasks">Task Summary</a></li>
     <li><a href="#dt">Advanced Extension: Distance Transform</a></li>
   </ul>
+
+  <p style="margin-bottom: 0.5em;">Read these instructions for:</p>
+  <div class="switch">
+    <span id="cpp-label" class="active-lang">C++</span>
+    <label class="switch">
+      <input type="checkbox" id="lang-toggle">
+        <span class="slider round"></span>
+    </label>
+    <span id="python-label">Python</span>
+  </div>
 
   <hr class="major" />
 
@@ -71,38 +83,36 @@ parent: Projects
 
   <h3 id="sec_graph">Grid Graph</h3>
 
-  <p>Information about the map for a particular environment is stored in a provided struct called <code>GridGraph</code>, described in <a href="#code_utils_gridgraph">the code overview</a>. You can visualize the available maps using the <a href="/tutorials/app.html">webapp</a>.</p>
+  <p>Information about the map for a particular environment is stored in a provided <span class="cpp-content">struct</span><span class="python-content">class</span> called <code>GridGraph</code>, described in <a href="#code_utils_gridgraph">the code overview</a>. You can visualize the available maps using the <a href="/tutorials/app.html">webapp</a>.</p>
 
   <p>A number of helper functions are available for you to use. Review them in the <a href="#code_utils">code overview</a>.</p>
 
   <p>
-    You will need to complete the function <code>findNeighbors()</code>.
+    You will need to complete the function <span class="cpp-content"><code>findNeighbors()</code></span><span class="python-content"><code>graph.find_neighbors()</code></span>.
     The neighbors of a cell are the adjacent cells in the graph.
     This function will be necessary in order to complete your planning algorithm.
   </p>
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
-      <strong id="todo2_1">P3.1:</strong> In the file <code>graph_utils.cpp</code>, complete functions <code>findNeighbors()</code>.
-      It should accept the index of a node and return a vector of indices of neighboring nodes.
-      You may use either 4-connected or 8-connected neighbors, as discussed in lab.
+      <strong id="todo2_1">P3.1:</strong>
+      <span class="cpp-content">In the file <code>graph_utils.cpp</code>, complete function <code>findNeighbors()</code>.
+        It should accept the index of a node and return a vector of indices of neighboring nodes.
+        You may use either 4-connected or 8-connected neighbors.</span>
+      <span class="python-content">In the file <code>src/graph.py</code>, complete function <code>graph.find_neighbors()</code>.
+        It should accept the cell coordinates of a node and return a list of neighboring cells.
+        You may use either 4-connected or 8-connected neighbors.</span>
     </li>
   </ul>
 
-  <ul class="hint">
-    <li class="icon solid fa-cogs">
-      <strong>Hint:</strong>
-      You might find the functions <code>idxToCell()</code> and <code>cellToIdx()</code> helpful.
-    </li>
-  </ul>
-
-  <!-- <p>We have provided a test script to check your indexing functions. Compile your code either on Replit or on the robot, then run the test script in the Docker like this:</p>
-  <pre><code class="language-bash">cd /code/build
-cmake ..
-make
-./test_graph</code></pre> -->
-
-  <!-- <p>The tests should pass before you move on to the next step. You may add more tests if you would like.</p> -->
+  <div class="cpp-content">
+    <ul class="hint">
+      <li class="icon solid fa-cogs">
+        <strong>Hint:</strong>
+        You might find the functions <code>idxToCell()</code> and <code>cellToIdx()</code> helpful.
+      </li>
+    </ul>
+  </div>
 
   <h3 id="sec_node">Storing Node Data</h3>
 
@@ -116,27 +126,33 @@ make
 
   <p>Using the concepts we have learned so far, design code to store this data. Then, modify <code>GridGraph</code> to store the node information. You may extend your implementation to store any additional information you need.</p>
 
-  <p><strong>Note:</strong> The nodes should be indexed the same way as the cells, as a single vector. You can use the <code>cellToIdx()</code> and <code>idxToCell()</code> functions to access node data for a specific cell.</p>
+  <div class="cpp-content">
+    <p><strong>Note:</strong> The nodes should be indexed the same way as the cells, as a single vector. You can use the <code>cellToIdx()</code> and <code>idxToCell()</code> functions to access node data for a specific cell.</p>
+  </div>
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
       <strong id="todo2_2">P3.2:</strong>
-      In the <code>graph_utils.h</code> file, design a data structure to store the cell information and modify <code>GridGraph</code> to add any new member variables accordingly.
+      In the <span class="cpp-content"><code>graph_utils.h</code></span>
+      <span class="python-content"><code>src/graph.py</code></span> file, design a data structure to store the cell information and modify <code>GridGraph</code> to add any new member variables accordingly.
     </li>
     <li class="icon solid fa-laptop-code">
       <strong id="todo2_3">P3.3:</strong>
-      In the <code>graph_utils.cpp</code> file, complete function <code>initGraph()</code> to initialize the cell data. You can assume the graph will be loaded when the function is called.
+      <span class="cpp-content">In the <code>graph_utils.cpp</code> file, complete function <code>initGraph()</code> to initialize the cell data. You can assume the graph will be loaded when the function is called.</span>
+      <span class="python-content">In the <code>src/graph.py</code> file, complete function <code>graph.init_graph()</code> to initialize the cell data. You can assume the graph will be loaded when the function is called.</span>
     </li>
     <li class="icon solid fa-laptop-code">
       <strong id="todo2_4">P3.4:</strong>
-      In the <code>graph_utils.cpp</code> file, complete function <code>getParent()</code> so it returns the index of the parent of the given cell. If a cell does not have a parent, it should return -1.
+      <span class="cpp-content">In the <code>graph_utils.cpp</code> file, complete function <code>getParent()</code> so it returns the index of the parent of the given cell. If a cell does not have a parent, it should return -1.</span>
+      <span class="python-content">In the <code>src/graph.py</code> file, complete function <code>graph.get_parent()</code> so it returns a cell corresponding to the parent of the given cell. If a cell does not have a parent, it should return None.</span>
     </li>
   </ul>
 
   <ul class="hint">
     <li class="icon solid fa-cogs">
       <strong>Hint:</strong>
-      You might consider implementing a struct to represent your cell node and store a vector of cell node structs in <code>GridGraph</code>. Alternatively, you might consider adding a few vectors to the <code>GridGraph</code> struct to store the relevant information.
+      <span class="cpp-content">You might consider implementing a struct to represent your cell node and store a vector of cell node structs in <code>GridGraph</code>. Alternatively, you might consider adding a few vectors to the <code>GridGraph</code> struct to store the relevant information.</span>
+      <span class="python-content">You might consider implementing a class to represent your cell node and store a list of cell node objects in <code>GridGraph</code>. Alternatively, you might consider adding a few NumPy matrices to the <code>GridGraph</code> class to store the relevant information.</span>
     </li>
     <li class="icon solid fa-cogs">
       <strong>Hint:</strong>
@@ -146,61 +162,119 @@ make
 
   <h3 id="sec_bfs">Breadth First Search</h3>
 
-  <p>In this section, you will write code to implement a <strong>Breadth First Search (BFS)</strong> over a graph, given a start and goal cell. You will write your code in the file <code>src/graph_search/graph_search.cpp</code>. Your code should go in the function <code>breadthFirstSearch()</code>, which looks like this:</p>
+  <p>In this section, you will write code to implement a <strong>Breadth First Search (BFS)</strong> over a graph, given a start and goal cell. You will write your code in the file <span class="cpp-content"><code>src/graph_search/graph_search.cpp</code></span>
+  <span class="python-content"><code>src/graph_search.py</code></span>. Your code should go in the function <span class="cpp-content"><code>breadthFirstSearch()</code></span>
+  <span class="python-content"><code>breadth_first_search()</code></span>, which looks like this:</p>
+  <div class="cpp-content">
   <pre><code class="language-cpp">std::vector<Cell> breadthFirstSearch(GridGraph& graph, const Cell& start, const Cell& goal)
 {
-std::vector<Cell> path;  // The final path should be placed here.
-initGraph(graph);  // Make sure all the node values are reset.
-int start_idx = cellToIdx(start.i, start.j, graph);
+  std::vector<Cell> path;  // The final path should be placed here.
+  initGraph(graph);  // Make sure all the node values are reset.
+  int start_idx = cellToIdx(start.i, start.j, graph);
 
-/**
-  * TODO (P3): Implement BFS.
-  */
+  /**
+    * TODO (P3): Implement BFS.
+    */
 
-return path;
+  return path;
 }</code></pre>
-  <p>Assume the graph is loaded with the corresponding map data. The function first calls <code>initGraph()</code> to make sure that all the nodes are initialized. The start and goal position are passed in as <code>Cell</code> structs.<code>Cell</code> has two integer member variables: <code>i</code> and <code>j</code>, corresponding to the row and column coordinates of the cell. When the path is found, your code should store the path in the provided vector, <code>path</code>. You can use the provided function <code>tracePath()</code>, as follows:</p>
-  <pre><code class="language-cpp">path = tracePath(goal_idx, graph);</code></pre>
-  <p>where <code>goal_idx</code> is an integer value which stores the index of the goal. If you have correctly maintained the parent structure of the cells and the <code>idxToCell()</code> and <code>getParent()</code> functions are implemented, this will return the path to the start node. The start node should not have a parent. If no path was found, your code should return an empty vector. Use <code>checkCollision()</code> to check whether a cell is in collision.</p>
+</div>
+<div class="python-content">
+  <pre><code class="language-python">def breadth_first_search(graph, start, goal):
+    """Breadth First Search (BFS) algorithm.
+    Args:
+        graph: The graph class.
+        start: Start cell as a Cell object.
+        goal: Goal cell as a Cell object.
+    """
+    graph.init_graph()  # Make sure all the node values are reset.
 
-  <p>The webapp allows you to play back which cells are visited in your algorithm. It will show visited cells in grey so you can visualize the order that the cells are explored. To visualize the visited cells, you should add the cell to the vector <code>graph.visited_cells</code>, as follows (given that the current cell is stored in <code>Cell</code> struct <code>c</code>):</p>
-  <pre><code class="language-cpp">graph.visited_cells.push_back(c);</code></pre>
+    """TODO (P3): Implement BFS."""
+
+    # If no path was found, return an empty list.
+    return []
+</code></pre>
+</div>
+  <p>Assume the graph is loaded with the corresponding map data. The function first calls <span class="cpp-content"><code>initGraph()</code></span><span class="python-content"><code>graph.init_graph()</code></span> to make sure that all the nodes are initialized. The start and goal position are passed in as <code>Cell</code> types.<code>Cell</code> has two integer member variables: <code>i</code> and <code>j</code>, corresponding to the x-axis (column) and y-axis (row) coordinates of the cell. <span class="cpp-content">When the path is found, your code should store the path in the provided vector, <code>path</code>.</span> You can use the provided function <span class="cpp-content"><code>tracePath()</code></span><span class="python-content"><code>trace_path()</code></span>, as follows:</p>
+
+  <div class="cpp-content">
+    <pre><code class="language-cpp">path = tracePath(goal_idx, graph);</code></pre>
+
+    <p>where <code>goal_idx</code> is an integer value which stores the index of the goal. If you have correctly maintained the parent structure of the cells and the <code>idxToCell()</code> and <code>getParent()</code> functions are implemented, this will return the path to the start node. The start node should not have a parent. If no path was found, your code should return an empty vector. Use <code>checkCollision()</code> to check whether a cell is in collision.</p>
+  </div>
+  <div class="python-content">
+    <pre><code class="language-python">trace_path(goal_cell, graph)</code></pre>
+
+    <p>where <code>goal_cell</code> is a Cell corresponding to the goal. If you have correctly maintained the parent structure of the cells and <code>graph.get_parent()</code> function is implemented, this will return the path to the start node. The start node should not have a parent. If no path was found, your code should return an empty list. Use <code>check_collision()</code> to check whether a cell is in collision.</p>
+  </div>
+
+  <p>The webapp allows you to play back which cells are visited in your algorithm. It will show visited cells in grey so you can visualize the order that the cells are explored. To visualize the visited cells, you should add the cell to
+    <span class="cpp-content">the vector <code>graph.visited_cells</code>, as follows (given that the current cell is stored in <code>Cell</code> struct <code>c</code>)</span><span class="python-content">the list <code>graph.visited_cells</code>, as follows (given that the current cell is stored in <code>Cell</code> object <code>c</code>)</span>:
+  </p>
+  <div class="cpp-content">
+    <pre><code class="language-cpp">graph.visited_cells.push_back(c);</code></pre>
+  </div>
+  <div class="python-content">
+    <pre><code class="language-cpp">graph.visited_cells.append(Cell(c.i, c.j))</code></pre>
+  </div>
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
       <strong id="todo2_5">P3.5:</strong>
-      In the <code>graph_search.cpp</code> file, implement Breadth First Search in function <code>breadthFirstSearch()</code>.
+      <span class="cpp-content">In the <code>graph_search.cpp</code> file, implement Breadth First Search in function <code>breadthFirstSearch()</code>.</span>
+      <span class="python-content">In the <code>graph_search.py</code> file, implement Breadth First Search in function <code>breadth_first_search()</code>.</span>
     </li>
   </ul>
 
-  <ul class="hint">
-    <li class="icon solid fa-cogs"><strong>Hint:</strong> BFS maintains a list of nodes to visit using a First-In-First-Out data structure (or a queue). C++ has a queue implementation called <code>std::queue</code>. Assuming you have a queue <code>q</code>, <code>q.push(my_node_idx)</code> will push a value onto the back of the queue, <code>q.front()</code> will return the value at the front of the queue, and <code>q.pop()</code> will remove the first element of the queue.</li>
-    <li class="icon solid fa-cogs"><strong>Hint:</strong> Your visit list should store integers corresponding to the indices of the nodes of interest. You can use these indices to retrieve and modify cell data directly in the graph. Do not push any structs your graph stores onto the visit list! This makes a <emph>copy</emph> of the data, so any changes you make would not be reflected in the graph.</li>
-    <li class="icon solid fa-cogs"><strong>Hint:</strong> You should not add any cells which are in collision to your visit list.</li>
-    <li class="icon solid fa-cogs"><strong>Hint:</strong>If you complete the Distance Transform advanced extension, you can use <code>checkCollisionFast()</code> to check collisions. This requires that you call your distance transform function first. The results will be slightly different than <code>checkCollision()</code> if you use the Manhattan distance transform, but both are valid.</li>
-  </ul>
+  <div class="cpp-content">
+    <ul class="hint">
+      <li class="icon solid fa-cogs"><strong>Hint:</strong> BFS maintains a list of nodes to visit using a First-In-First-Out data structure (or a queue). C++ has a queue implementation called <code>std::queue</code>. Assuming you have a queue <code>q</code>, <code>q.push(my_node_idx)</code> will push a value onto the back of the queue, <code>q.front()</code> will return the value at the front of the queue, and <code>q.pop()</code> will remove the first element of the queue.</li>
+      <li class="icon solid fa-cogs"><strong>Hint:</strong> Your visit list should store integers corresponding to the indices of the nodes of interest. You can use these indices to retrieve and modify cell data directly in the graph. Do not push any structs your graph stores onto the visit list! This makes a <emph>copy</emph> of the data, so any changes you make would not be reflected in the graph.</li>
+      <li class="icon solid fa-cogs"><strong>Hint:</strong> You should not add any cells which are in collision to your visit list.</li>
+      <li class="icon solid fa-cogs"><strong>Hint:</strong>If you complete the Distance Transform advanced extension, you can use <code>checkCollisionFast()</code> to check collisions. This requires that you call your distance transform function first. The results will be slightly different than <code>checkCollision()</code> if you use the Manhattan distance transform, but both are valid.</li>
+    </ul>
+  </div>
+  <div class="python-content">
+    <ul class="hint">
+      <li class="icon solid fa-cogs"><strong>Hint:</strong> BFS maintains a list of nodes to visit using a First-In-First-Out data structure (or a queue). In Python, you can use a regular list as a queue. Assuming you have a list <code>q</code>, <code>q.pop(0)</code> will remove the value at the front of the queue and return it.</li>
+      <li class="icon solid fa-cogs"><strong>Hint:</strong> Your visit list can store node objects directly. Modifying them will modify  the values everywhere in the graph, since Python objects are handled as references.</li>
+      <li class="icon solid fa-cogs"><strong>Hint:</strong> You should not add any cells which are in collision to your visit list.</li>
+    </ul>
+  </div>
 
   <h3 id="sec_robot">Path Planning on the Robot</h3>
 
-  <p>You will write code to search for and drive along a path on the robot in the file <code>src/robot_plan_path.cpp</code>. We have provided a function <code>drivePath(std::vector<Cell>& path, GridGraph& graph)</code> which will send the robot a command to follow the path defined in vector of cells <code>path</code>. This function sends a path to the motion controller. Modify the provided code template to call your path planning algorithm and then send the path to the robot.</p>
+  <p>You will write code to search for and drive along a path on the robot in the file <span class="cpp-content"><code>src/robot_plan_path.cpp</code></span><span class="python-content"><code>robot_plan_path.py</code></span>. We use the <a href="/mbot/bridge-api">MBot API</a> to send the robot a path to follow.Modify the provided code template to call your path planning algorithm and then send the path to the robot.</p>
 
-  <p><strong>Note:</strong> The utility function <code>loadFromFile()</code> initializes the radius for collision checking to the robot radius, stored in variable <code>ROBOT_RADIUS</code>, plus the width of one cell. You might want to make the collision radius larger on the robot, so that your planner is more conservative on the robot. To do this modify the value of <code>graph.collision_radius</code> after the map is loaded.</p>
+  <p><strong>Note:</strong> The utility function <code>loadFromFile()</code> initializes the radius for collision checking to the robot radius, stored in variable <code>ROBOT_RADIUS</code>, plus the width of one cell. You might want to make the collision radius larger on the robot, so that your planner is more conservative on the robot.
+    <span class="cpp-content">To do this modify the value of <code>graph.collision_radius</code> after the map is loaded.</span>
+    <span class="python-content">To do this, use the <code>-r</code> argument on the command line or change the default collision radius in the code.</span>
+  </p>
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
       <strong id="todo2_6">P3.6:</strong>
-      In the <code>robot_plan_path.cpp</code> file, call your path planning function and use the <code>drivePath()</code> function provided to send the path to the robot.
+      <span class="cpp-content">In the <code>robot_plan_path.cpp</code> file, call your path planning function and use the <code>MBot::drivePath()</code> function in the API to send the path to the robot.</span>
+      <span class="python-content">In the <code>robot_plan_path.py</code> file, call your path planning function and use the <code>MBot.drive_path()</code> function in the API to send the path to the robot.</span>
     </li>
   </ul>
 
-  <ul class="hint">
-    <li class="icon solid fa-cogs"><strong>Hint:</strong> If you are using the <code>checkCollisionFast()</code> function in your graph search, do not forget to call your distance transform function after the map is loaded.</li>
-    <li class="icon solid fa-cogs"><strong>Hint:</strong> The provided function <code>drivePath()</code> returns immediately after sending the path command to motion controller. That means your program will quit before the robot has reached the goal. If you wish to send another path to the robot or perform some processing when the robot has reached the goal, you can write code to wait until the robot has reached the goal before finishing.</li>
-  </ul>
+  <div class="cpp-content">
+    <ul class="hint">
+      <li class="icon solid fa-cogs"><strong>Hint:</strong> If you are using the <code>checkCollisionFast()</code> function in your graph search, do not forget to call your distance transform function after the map is loaded.</li>
+      <li class="icon solid fa-cogs"><strong>Hint:</strong> The provided function <code>drivePath()</code> returns immediately after sending the path command to motion controller. That means your program will quit before the robot has reached the goal. If you wish to send another path to the robot or perform some processing when the robot has reached the goal, you can write code to wait until the robot has reached the goal before finishing.</li>
+    </ul>
+  </div>
+  <div class="python-content">
+    <ul class="hint">
+      <li class="icon solid fa-cogs"><strong>Hint:</strong> The <code>MBot.drive_path()</code> function returns immediately after sending the path command to motion controller. That means your program will quit before the robot has reached the goal. If you wish to send another path to the robot or perform some processing when the robot has reached the goal, you can write code to wait until the robot has reached the goal before finishing.</li>
+    </ul>
+  </div>
 
   <p>Before you run the code, you should make a map of the environment you want to run in (see the <a href="/mbot/mapping">mapping tutorial</a>). Once you have made a map, switch the robot into localization only mode.</p>
 
-  <p>To compile and run path planning on the robot, connect to the robot using VSCode. Then, from inside the repository you cloned onto the robot, compile as follows:</p>
+  <div class="cpp-content">
+    <p>To compile and run path planning on the robot, connect to the robot using VSCode. Then, from inside the repository you cloned onto the robot, compile as follows:</p>
   <pre><code class="language-bash">cd build
 cmake -DOMNIBOT=On ..
 make</code></pre>
@@ -210,6 +284,14 @@ make</code></pre>
   <p>The map is stored in <code>~/mbot-bin/maps/current.map</code>. Use that path if you did not move the map since creating it. You can also pass in <code>goal_x</code> and <code>goal_y</code>, the global position of the goal, relative to the starting position of your map, in meters. If you do not pass these in, they will default to zero.</p>
 
   <p>When you pass in arguments to the code, do not include the square brackets.</p>
+  </div>
+
+  <div class="python-content">
+    <p>To run your code on the robot, do:</p>
+    <pre><code class="language-bash">python robot_plan_path.py --goal [GOAL_x GOAL_y]</code></pre>
+
+    <p>The goal is an x and y position in meters. Use the robot's web app to pick a good goal by clicking the cell you want to navigate to and noting its coordinates.</p>
+  </div>
 
 <hr class="major" />
 
@@ -217,17 +299,24 @@ make</code></pre>
 
   <h3 id="astar">A-Star Search</h3>
 
-  <p>As an advanced extension, you may write code to implement <strong>A-Star Search</strong> over a graph, given a start and goal cell. You will write your code in the file <code>src/graph_search/graph_search.cpp</code>. Your code should go in the function <code>aStarSearch()</code>. This function looks a lot like the one for <a href="#sec_bfs">BFS</a>. However, you will need to maintain the f-score of the nodes you explore. Modify your cell node data to include the f-score of the node. In the <code>graph_utils.cpp</code> file, implement the function <code>getScore()</code> to return a double corresponding to the f-score of the given cell index.</p>
+  <p>As an advanced extension, you may write code to implement <strong>A-Star Search</strong> over a graph, given a start and goal cell. You will write your code in the file <span class="cpp-content"><code>src/graph_search/graph_search.cpp</code></span><span class="python-content"><code>src/graph_search.py</code></span>. Your code should go in the function <span class="cpp-content"><code>aStarSearch()</code></span><span class="python-content"><code>a_star_search()</code></span>. This function looks a lot like the one for <a href="#sec_bfs">BFS</a>. However, you will need to maintain the f-score of the nodes you explore. Modify your cell node data to include the f-score of the node.
+  <span class="cpp-content">In the <code>graph_utils.cpp</code> file, implement the function <code>getScore()</code> to return a double corresponding to the f-score of the given cell index.</span></p>
 
-  <p>In A-Star, the next node to explore is the one with the <emph>lowest f-score</emph>. The function <code>findLowestScore()</code> takes a <code>std::vector</code> of integers as an argument, along with the graph, and returns the index of the lowest score node <emph>in the list</emph>. You can use this function as follows to get the lowest scoring node, and then remove it from the list:</p>
+  <div class="cpp-content">
+    <p>In A-Star, the next node to explore is the one with the <emph>lowest f-score</emph>. The function <code>findLowestScore()</code> takes a <code>std::vector</code> of integers as an argument, along with the graph, and returns the index of the lowest score node <emph>in the list</emph>. You can use this function as follows to get the lowest scoring node, and then remove it from the list:</p>
   <pre><code class="language-cpp">int min_score_idx = findLowestScore(visit_list, graph);
 int current = visit_list[min_score_idx];
 visit_list.erase(visit_list.begin() + min_score_idx);</code></pre>
+  </div>
+  <div class="python-content">
+    In A-Star, the next node to explore is the one with the <emph>lowest f-score</emph>. You will need to write code to find this node and return it, then remove it from the list.
+  </div>
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
       <strong id="todoAE_3_i">Advanced Extension P3.i (1 extension point):</strong>
-      In the <code>graph_search.cpp</code> file, implement A-Star Search in function <code>aStarSearch()</code>.
+      <span class="cpp-content">In the <code>graph_search.cpp</code> file, implement A-Star Search in function <code>aStarSearch()</code>.</span>
+      <span class="python-content">In the <code>graph_search.py</code> file, implement A-Star Search in function <code>a_star_search()</code>.</span>
     </li>
   </ul>
 
@@ -238,6 +327,11 @@ visit_list.erase(visit_list.begin() + min_score_idx);</code></pre>
     <h2><a href="#code">Code Overview</a></h2>
   </header>
 
+  <div class="python-content">
+    <p>Coming soon!</p>
+  </div>
+
+  <div class="cpp-content">
   <p>The following structs are provided:</p>
 
   <ul class="hint">
@@ -331,6 +425,7 @@ std::vector&lt;float&gt; obstacle_distances;  // The distance from each cell to 
       <em>Warning:</em> This only works if <code>getScore()</code> is implemented (A-Star only).
     </li>
   </ul>
+</div>
 
 </section>
 
@@ -342,28 +437,38 @@ std::vector&lt;float&gt; obstacle_distances;  // The distance from each cell to 
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
-      <strong><a href="#todo2_1">P3.1</a>:</strong> In the file <code>graph_utils.cpp</code>, complete functions <code>findNeighbors()</code>.
-      It should accept the index of a node and return a vector of indices of neighboring nodes.
+      <strong><a href="#todo2_1">P3.1</a>:</strong>
+      <span class="cpp-content">In the file <code>graph_utils.cpp</code>, complete function <code>findNeighbors()</code>.
+        It should accept the index of a node and return a vector of indices of neighboring nodes.
+        You may use either 4-connected or 8-connected neighbors.</span>
+      <span class="python-content">In the file <code>src/graph.py</code>, complete function <code>graph.find_neighbors()</code>.
+        It should accept the cell coordinates of a node and return a list of neighboring cells.
+        You may use either 4-connected or 8-connected neighbors.</span>
     </li>
     <li class="icon solid fa-laptop-code">
       <strong><a href="#todo2_2">P3.2</a>:</strong>
-      In the <code>graph_utils.h</code> file, design a data structure to store the cell information and modify <code>GridGraph</code> to add any new member variables accordingly.
+      In the <span class="cpp-content"><code>graph_utils.h</code></span>
+      <span class="python-content"><code>src/graph.py</code></span> file, design a data structure to store the cell information and modify <code>GridGraph</code> to add any new member variables accordingly.
     </li>
     <li class="icon solid fa-laptop-code">
       <strong><a href="#todo2_3">P3.3</a>:</strong>
-      In the <code>graph_utils.cpp</code> file, complete function <code>initGraph()</code> to initialize the cell data. You can assume the graph will be loaded when the function is called.
+      <span class="cpp-content">In the <code>graph_utils.cpp</code> file, complete function <code>initGraph()</code> to initialize the cell data. You can assume the graph will be loaded when the function is called.</span>
+      <span class="python-content">In the <code>src/graph.py</code> file, complete function <code>graph.init_graph()</code> to initialize the cell data. You can assume the graph will be loaded when the function is called.</span>
     </li>
     <li class="icon solid fa-laptop-code">
       <strong><a href="#todo2_4">P3.4</a>:</strong>
-      In the <code>graph_utils.cpp</code> file, complete function <code>getParent()</code> so it returns the index of the parent of the given cell. If a cell does not have a parent, it should return -1.
+      <span class="cpp-content">In the <code>graph_utils.cpp</code> file, complete function <code>getParent()</code> so it returns the index of the parent of the given cell. If a cell does not have a parent, it should return -1.</span>
+      <span class="python-content">In the <code>src/graph.py</code> file, complete function <code>graph.get_parent()</code> so it returns a cell corresponding to the parent of the given cell. If a cell does not have a parent, it should return None.</span>
     </li>
     <li class="icon solid fa-laptop-code">
       <strong><a href="#todo2_5">P3.5</a>:</strong>
-      In the <code>graph_search.cpp</code> file, implement Breadth First Search in function <code>breadthFirstSearch()</code>.
+      <span class="cpp-content">In the <code>graph_search.cpp</code> file, implement Breadth First Search in function <code>breadthFirstSearch()</code>.</span>
+      <span class="python-content">In the <code>graph_search.py</code> file, implement Breadth First Search in function <code>breadth_first_search()</code>.</span>
     </li>
     <li class="icon solid fa-laptop-code">
       <strong><a href="#todo2_6">P3.6</a>:</strong>
-      In the <code>robot_plan_path.cpp</code> file, call your path planning function and use the <code>drivePath()</code> function provided to send the path to the robot.
+      <span class="cpp-content">In the <code>robot_plan_path.cpp</code> file, call your path planning function and use the <code>MBot::drivePath()</code> function in the API to send the path to the robot.</span>
+      <span class="python-content">In the <code>robot_plan_path.py</code> file, call your path planning function and use the <code>MBot.drive_path()</code> function in the API to send the path to the robot.</span>
     </li>
   </ul>
 
@@ -374,7 +479,7 @@ std::vector&lt;float&gt; obstacle_distances;  // The distance from each cell to 
     <h2><a href="#dt">Advanced Extensions</a></h2>
   </header>
 
-  <p>If you want to go even further, you can implement the distance transform for faster collision checking.</p>
+  <p>If you want to go even further, you can implement the distance transform for faster collision checking. Template code for this extension is only available in C++, but you can implement it yourself in Python.</p>
 
   <h3 id="dt">Distance Transform (Manhattan)</h3>
 
