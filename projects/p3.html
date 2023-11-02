@@ -26,7 +26,7 @@ parent: Projects
     </li>
     <li><a href="#code">Code Overview</a></li>
     <li><a href="#tasks">Task Summary</a></li>
-    <li><a href="#adv_ext_summary">Advanced Extensions Summary</a></li>
+    <li><a href="#dt">Advanced Extension: Distance Transform</a></li>
   </ul>
 
   <hr class="major" />
@@ -231,67 +231,6 @@ visit_list.erase(visit_list.begin() + min_score_idx);</code></pre>
     </li>
   </ul>
 
-  <h3 id="dt">Distance Transform (Manhattan)</h3>
-
-  <p>A <strong>binary distance transform</strong> calculates the distance from each cell to the nearest occupied cell in a map.
-  We can use this to check whether a cell is in collision quickly.
-  The distance transform values can also be used to compute more interesting costs to visit a cell in a planning algorithm.
-  The output should look something like the image below.
-  The grey cells represent smaller distances to the nearest obstacle, and the white cells represent higher distances.</p>
-
-  <!-- <span class="image main"><img src="/assets/images/p2/dist_tf.png" alt="" style="max-width:600px;"/></span> -->
-
-  <p>If you have completed this advanced extension, you can use function <code>checkCollisionFast()</code> in your path planning algorithms.</p>
-
-  <p>
-    A good starting point is to implement a slow version of the distance transform which gives us the Euclidean distance to each cell.
-    This can be implmented in the function <code>distanceTransformSlow()</code> located in <code>src/potential_field/distance_transform.cpp</code>.
-    To do this, for each unoccupied cell, we can calculate the distance between the current cell and every occupied cell in the graph.
-    We store the smallest distance in the <code>graph.obstacle_distances</code> vector. This will help you get the hang of the idea, but is very slow! This algorithm alone is not worth extension points.
-  </p>
-
-  <ul class="hint">
-    <li class="icon solid fa-cogs"><strong>Hint:</strong> You can visualize your transform in the web app by modifying the function <code>initGraph()</code> so that it calls <code>distanceTransformSlow()</code>. If <code>graph.obstacle_distances</code> contains data, you should be able to see the distance transform when you toggle &quot;Show Distance Transform&quot; in the web app, after uploading the planning file.</li>
-    <!-- <li class="icon solid fa-cogs"><strong>Hint:</strong> Can you make your algorithm any faster?</li> -->
-  </ul>
-
-  <p>
-    To get the advanced extension point, you should implement a much faster algorithm for computing the distance transform, but which computes the Manhattan distance from each unoccupied cell to the nearest occupied cell.
-    The 2D Distance Transform is discribed in <a href="https://youtu.be/5vI76u17-UE">this video lecture</a>
-    [<a href="/files/lectures/rob102_07_distance_transform.pdf">Slides</a>].
-    There is also an accompanying example which can be completed in Replit:
-    [<a href="/files/lectures/in-class/files/dt.cpp">Template Code</a>]
-    [<a href="/files/lectures/in-class/rob102_08_inclass_distance_transform.pdf">Slides</a>].
-  </p>
-
-  <p>
-    Implement this algorithm in the function <code>distanceTransformManhattan()</code> located in <code>src/potential_field/distance_transform.cpp</code>.
-    You can visualize your distance transform by modifying the function <code>initGraph()</code> so that it calls <code>distanceTransformManhattan()</code>.
-  </p>
-
-  <ul class="todo">
-    <li class="icon solid fa-laptop-code">
-      <strong id="todoAE_3_iii">Advanced Extension P3.ii (1 extension point):</strong>
-      In the <code>distance_transform.cpp</code> file, complete function <code>distanceTransformManhattan()</code> so that it uses the fast Manhattan distance transform algorithm, and stores the result in <code>graph.obstacle_distances</code>.
-    </li>
-  </ul>
-
-  <h3 id="dt_euclidean">Distance Transform (Euclidean)</h3>
-
-  <p>
-    <strong>Notes on the algorithm:</strong> <a href="/files/lectures/fast_euclidean_dt.pdf">Fast Euclidean Distance Transform</a>.
-    The notes describe an algorithm presented in a research paper which is available <a href="http://people.cs.uchicago.edu/~pff/papers/dt.pdf">here</a>.
-  </p>
-
-  <p>For an additional advanced extension point, you can implement the fast Euclidean distance transform described in the notes linked above. The function <code>distanceTransformEuclidean2D()</code> is provided in the file <code>src/potential_field/distance_transform.cpp</code> to implement the algorithm. You may use function <code>distanceTransformEuclidean1D()</code> to implement the 1D version of the algorithm which is used within the 2D algorithm.</p>
-
-  <ul class="todo">
-    <li class="icon solid fa-laptop-code">
-      <strong id="todoAE_3_iii">Advanced Extension P3.iii (1 extension point):</strong>
-      In the <code>distance_transform.cpp</code> file, complete function <code>distanceTransformEuclidean2D()</code> so that it uses the fast Euclidean distance transform algorithm, and stores the result in <code>graph.obstacle_distances</code>.
-    </li>
-  </ul>
-
 </section>
 
 <section id="code">
@@ -432,21 +371,69 @@ std::vector&lt;float&gt; obstacle_distances;  // The distance from each cell to 
 
 <section id="adv_ext">
   <header class="major">
-    <h2><a href="#adv_ext_summary">Advanced Extensions</a></h2>
+    <h2><a href="#dt">Advanced Extensions</a></h2>
   </header>
+
+  <p>If you want to go even further, you can implement the distance transform for faster collision checking.</p>
+
+  <h3 id="dt">Distance Transform (Manhattan)</h3>
+
+  <p>A <strong>binary distance transform</strong> calculates the distance from each cell to the nearest occupied cell in a map.
+  We can use this to check whether a cell is in collision quickly.
+  The distance transform values can also be used to compute more interesting costs to visit a cell in a planning algorithm.
+  The output should look something like the image below.
+  The grey cells represent smaller distances to the nearest obstacle, and the white cells represent higher distances.</p>
+
+  <!-- <span class="image main"><img src="/assets/images/p2/dist_tf.png" alt="" style="max-width:600px;"/></span> -->
+
+  <p>If you have completed this advanced extension, you can use function <code>checkCollisionFast()</code> in your path planning algorithms.</p>
+
+  <p>
+    A good starting point is to implement a slow version of the distance transform which gives us the Euclidean distance to each cell.
+    This can be implmented in the function <code>distanceTransformSlow()</code> located in <code>src/potential_field/distance_transform.cpp</code>.
+    To do this, for each unoccupied cell, we can calculate the distance between the current cell and every occupied cell in the graph.
+    We store the smallest distance in the <code>graph.obstacle_distances</code> vector. This will help you get the hang of the idea, but is very slow! This algorithm alone is not worth extension points.
+  </p>
+
+  <ul class="hint">
+    <li class="icon solid fa-cogs"><strong>Hint:</strong> You can visualize your transform in the web app by modifying the function <code>initGraph()</code> so that it calls <code>distanceTransformSlow()</code>. If <code>graph.obstacle_distances</code> contains data, you should be able to see the distance transform when you toggle &quot;Show Distance Transform&quot; in the web app, after uploading the planning file.</li>
+    <!-- <li class="icon solid fa-cogs"><strong>Hint:</strong> Can you make your algorithm any faster?</li> -->
+  </ul>
+
+  <p>
+    To get the advanced extension point, you should implement a much faster algorithm for computing the distance transform, but which computes the Manhattan distance from each unoccupied cell to the nearest occupied cell.
+    The 2D Distance Transform is discribed in <a href="https://youtu.be/5vI76u17-UE">this video lecture</a>
+    [<a href="/files/lectures/rob102_07_distance_transform.pdf">Slides</a>].
+    There is also an accompanying example which can be completed in Replit:
+    [<a href="/files/lectures/in-class/files/dt.cpp">Template Code</a>]
+    [<a href="/files/lectures/in-class/rob102_08_inclass_distance_transform.pdf">Slides</a>].
+  </p>
+
+  <p>
+    Implement this algorithm in the function <code>distanceTransformManhattan()</code> located in <code>src/potential_field/distance_transform.cpp</code>.
+    You can visualize your distance transform by modifying the function <code>initGraph()</code> so that it calls <code>distanceTransformManhattan()</code>.
+  </p>
 
   <ul class="todo">
     <li class="icon solid fa-laptop-code">
-      <strong><a href="#todoAE_3_i">Advanced Extension P3.i</a>:</strong>
-      Implement A-Star path finding.
+      <strong id="todoAE_3_iii">Advanced Extension P3.ii (1 extension point):</strong>
+      In the <code>distance_transform.cpp</code> file, complete function <code>distanceTransformManhattan()</code> so that it uses the fast Manhattan distance transform algorithm, and stores the result in <code>graph.obstacle_distances</code>.
     </li>
+  </ul>
+
+  <h3 id="dt_euclidean">Distance Transform (Euclidean)</h3>
+
+  <p>
+    <strong>Notes on the algorithm:</strong> <a href="/files/lectures/fast_euclidean_dt.pdf">Fast Euclidean Distance Transform</a>.
+    The notes describe an algorithm presented in a research paper which is available <a href="http://people.cs.uchicago.edu/~pff/papers/dt.pdf">here</a>.
+  </p>
+
+  <p>For an additional advanced extension point, you can implement the fast Euclidean distance transform described in the notes linked above. The function <code>distanceTransformEuclidean2D()</code> is provided in the file <code>src/potential_field/distance_transform.cpp</code> to implement the algorithm. You may use function <code>distanceTransformEuclidean1D()</code> to implement the 1D version of the algorithm which is used within the 2D algorithm.</p>
+
+  <ul class="todo">
     <li class="icon solid fa-laptop-code">
-      <strong><a href="#todoAE_3_ii">Advanced Extension P3.ii</a>:</strong>
-      Implement a Manhattan distance transform and use the result to check for collisions during path planning.
-    </li>
-    <li class="icon solid fa-laptop-code">
-      <strong><a href="#todoAE_3_iii">Advanced Extension P3.iii</a>:</strong>
-      Implement a Euclidean distance transform and use the result to check for collisions during path planning.
+      <strong id="todoAE_3_iii">Advanced Extension P3.iii (1 extension point):</strong>
+      In the <code>distance_transform.cpp</code> file, complete function <code>distanceTransformEuclidean2D()</code> so that it uses the fast Euclidean distance transform algorithm, and stores the result in <code>graph.obstacle_distances</code>.
     </li>
   </ul>
 
