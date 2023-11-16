@@ -276,10 +276,10 @@ lang-toggle: true
   <div class="cpp-content">
     <p>To compile and run path planning on the robot, connect to the robot using VSCode. Then, from inside the repository you cloned onto the robot, compile as follows:</p>
   <pre><code class="language-bash">cd build
-cmake -DOMNIBOT=On ..
+cmake -DMBOT=On ..
 make</code></pre>
 
-  <p>Do not forget the argument <code>-DOMNIBOT=On</code> when running CMake. This is how the compiler knows whether to compile the robot code (which is not compiled by default for testing in Replit). To run the planning algorithm, in the <code>build</code> folder where you compiled, do:</p>
+  <p>Do not forget the argument <code>-DMBOT=On</code> when running CMake. This is how the compiler knows whether to compile the robot code (which is not compiled by default for testing in Replit). To run the planning algorithm, in the <code>build</code> folder where you compiled, do:</p>
   <pre><code class="language-bash">./robot_plan_path [PATH/TO/MAP] [goal_x] [goal_y]</code></pre>
   <p>The map is stored in <code>~/mbot-bin/maps/current.map</code>. Use that path if you did not move the map since creating it. You can also pass in <code>goal_x</code> and <code>goal_y</code>, the global position of the goal, relative to the starting position of your map, in meters. If you do not pass these in, they will default to zero.</p>
 
