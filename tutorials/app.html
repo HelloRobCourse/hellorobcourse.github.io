@@ -1,6 +1,7 @@
 ---
 layout: default
 parent: Tutorials
+lang-toggle: true
 ---
 
 <section>
@@ -40,7 +41,7 @@ parent: Tutorials
     <figcaption>Image: Downloading a map file from replit</figcaption>
   </div>
   <p style="margin-top: 10px;">
-    Once download, navigate to <a href="robotics102.github.io/nav-app/">robotics102.github.io/nav-app/</a>
+    Once download, navigate to <a href="https://hellorob.org/nav-app/">hellorob.org/nav-app/</a>
     Once open, click <strong>Upload Map File</strong>. This will open your file explorer where
     you can then select the map file that you downloaded, and upload it to the nav app. Once uploaded
     the map will automatically display. We now have the ability to click on the map to retrieve
@@ -52,11 +53,22 @@ parent: Tutorials
   </div>
 </section>
 
+<p style="margin-bottom: 0.5em;">Read these instructions for:</p>
+<div class="switch">
+  <span id="cpp-label" class="active-lang">C++</span>
+  <label class="switch">
+    <input type="checkbox" id="lang-toggle">
+      <span class="slider round"></span>
+  </label>
+  <span id="python-label">Python</span>
+</div>
+
+<hr class="major" />
+
 <section>
   <header class="major">
     <h2><a href="#sec_git">Visualizing a plan</a></h2>
   </header>
-
   <p>
     The main use of the web app is to visualize both the plan that your search algorithms generate
     along with show the order which your search algorithm visits cells. You find that the starter
@@ -64,6 +76,7 @@ parent: Tutorials
     necessary data to allow the web app to visualize a search path and visited cells.
   </p>
   <p>
+  <div class="cpp-content">
     To start, first navigate to your project on replit and open a terminal in replit.
     In the terminal, run <code>cd build && cmake ..</code> to generate the Makefile.
     Then run <code>make</code>. This will generate the application <code>nav_cli</code>.
@@ -92,11 +105,20 @@ parent: Tutorials
     <img style="max-width: 100%;" src="/assets/images/tutorials/webapp/nav-cli-map1-output.png" alt="" />
     <figcaption>Image: using nav_cli</figcaption>
   </div>
+  <code>nav_cli</code> generates an output file, named <code>out.planner</code> located in the
+  <code>build</code> folder of your project.
+  </div>
+ <div class="python-content">
+  You can run the cli with <code>python path_planner_cli.py -m [PATH/TO/MAP] --start [START_i START_j]
+   --goal [GOAL_i GOAL_j]</code> The map can be any map in the <code>data/</code> folder. You can also make your 
+   own or use maps from the robot to test! The start and goal should be represented by cell indices. You can also 
+   upload maps to the web app so that you can choose good start and goal cells to test. To test a different 
+   algorithm, you can pass <code>--algo [astar | bfs | dfs]</code>. The default is <code>bfs</code>.
 
+   This script will generate the file <code>out.planner</code>, which you can upload to the web app.
+ </div>
   <p>
-    <code>nav_cli</code> generates an output file, named <code>out.planner</code> located in the
-    <code>build</code> folder of your project. You will be able to open the file and see
-    its contents, which will look as follows:
+   You will be able to open the file and see its contents, which will look as follows:
   </p>
 
   <div style="display: flex; flex-direction: column; align-items: center;">
