@@ -23,9 +23,10 @@ lang-toggle: true
 
     <li><a href="#description">Project Description</a>
       <ul>
-        <li><a href="#adv_ext">Advanced Extensions</a></li>
+        <li><a href="#sec_robot">Path Planning on the Robot</a></li>
       </ul>
     </li>
+    <li><a href="#adv_ext">Advanced Extensions</a></li>
     <li><a href="#code">Code Overview</a></li>
     <li><a href="#tasks">Task Summary</a></li>
     <li><a href="#dt">Advanced Extension: Distance Transform</a></li>
@@ -281,7 +282,7 @@ make</code></pre>
 
   <p>Do not forget the argument <code>-DMBOT=On</code> when running CMake. This is how the compiler knows whether to compile the robot code (which is not compiled by default for testing in Replit). To run the planning algorithm, in the <code>build</code> folder where you compiled, do:</p>
   <pre><code class="language-bash">./robot_plan_path [PATH/TO/MAP] [goal_x] [goal_y]</code></pre>
-  <p>The map is stored in <code>~/mbot-bin/maps/current.map</code>. Use that path if you did not move the map since creating it. You can also pass in <code>goal_x</code> and <code>goal_y</code>, the global position of the goal, relative to the starting position of your map, in meters. If you do not pass these in, they will default to zero.</p>
+  <p>The map is stored in <code>~/current.map</code>. Use that path if you did not move the map since creating it. You can also pass in <code>goal_x</code> and <code>goal_y</code>, the global position of the goal, relative to the starting position of your map, in meters. If you do not pass these in, they will default to zero.</p>
 
   <p>When you pass in arguments to the code, do not include the square brackets.</p>
   </div>
