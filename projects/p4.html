@@ -173,19 +173,21 @@ pip install -r requirements.txt</code></pre>
     <p><strong>Robot Functions:</strong>
       The Robot helper allows you to drive the robot, plan to and execute a path, and turn to a goal. Use this functionality as follows:
     </p>
-    <pre><code class="language-python">robot = Robot()  # This variable is defined for you in the template.
-robot.plan_to_pose(x, y)    # Use this to drive to a goal location.
-robot.turn_to_theta(theta)  # Use this to turn to a goal angle.</code></pre>
+    <pre><code class="language-python">robot = MBot()  # This initializes communication with your robot.
+plan_to_pose(x, y, robot)    # Use this to drive to a goal location.
+turn_to_theta(theta, robot)  # Use this to turn to a goal angle.</code></pre>
 
   <p><strong>Camera Functions:</strong>
     The camera helper looks for Post-It notes in the camera image, and returns a cropped and scaled image which is the correct size to pass through your classification algorithm. To use it, do:
   </p>
   <pre><code class="language-python">ch = CameraHandler()  # This variable is defined for you in the template.
-frame = ch.get_image()   # Get the image of a digit from the camera.</code></pre>
+frame = ch.get_processed_image()   # Get the image of a digit from the camera.</code></pre>
 
-  <p>If a digit is not detected in the frame, it will return <code class="language-python">None</code>. You should handle this case. To save the image to the folder <code>output</code>, pass <code class="language-python">save=True</code> to the above function. This might be useful for debugging.</p>
+  <p>If a digit is not detected in the frame, it will return <code class="language-python">None</code>. You should handle this case. To save the image to the folder <code>output</code>, pass <code class="language-python">save=True</code> to the above function. This will also save images at all stages of preprocessing. This might be useful for debugging.</p>
 
   <p>To perform prediction on the frame using your model, do:</p>
   <pre><code class="language-python">y_pred = model.predict([frame])[0]</code></pre>
 
+  <p><strong>Waypoints and Labels:</strong>
+    A helper script has been provided to store and load waypoints paired with labels. See the intructions in <code class="language-python">README.md</code> or run <code class="language-python">python3 waypoint_writer.py</code> and follow the prompts. You will need to store waypoints and labels any time you move to a new course or update your map.
 </section>
