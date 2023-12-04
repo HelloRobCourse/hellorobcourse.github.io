@@ -199,6 +199,19 @@ The following functions can be used to send robot commands. None of them return 
 
     Resets the robot odometry to zero.
 
+* MBot.drive_path(path)
+  {: .fn}
+
+    Sends a path to the motion controller to follow.
+
+    This function will return right away, while the robot is still following the path. If you have code that should only run when the path is completed, you must check if the path is finished executing separately.
+
+    Parameters:
+    {: .sub-head}
+
+    {: .params}
+    * **path**: A list of coordinates (lists or tuples) in the path to be followed. If the coordinates have length 2, the values are assumed to be in form `[x, y]`, where `x` and `y` are in meters, with an angle of zero by default.  If the coordinates have length 3, the data is in form `[x, y, theta]`, where `x` and `y` are in meters and `theta` is in radians.
+
 ### Reading Robot Data
 
 The following functions can be used to read robot commands. None of the reading functions take parameters.
