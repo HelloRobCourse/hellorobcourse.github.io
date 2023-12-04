@@ -33,7 +33,7 @@ If you are seeing this behavior, [**check your motors**](#checking-motors), payi
 
 After you [calibrate your robot](/mbot/#calibrating-your-mbot), one problem could be that one or more wheels is driving *too fast*, causing your robot to drive crooked in one or more directions. For example, this video shows a robot being controlled via the web app where the back wheel is turning very fast, causing it to drive crooked when being driven left or right:
 
-<iframe class="centered" width="560" height="315" src="https://www.youtube.com/embed/4Az8Z5rkhyI?si=2e96PQCm0_3HrGIN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe style="max-width: 100%;" class="centered" width="560" height="315" src="https://www.youtube.com/embed/4Az8Z5rkhyI?si=2e96PQCm0_3HrGIN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <br/>
 
 The most common cause of this is a *bad encoder reading*. During calibration, the wheel with the bad encoder spins, but the encoder doesn't register the movement. The calibration script then determines that it should spin the motor *really fast* to make it move, since it can't sense the movement. If you are seeing this behavior, [**check your encoders**](#checking-encoders), then try [calibrating your robot](/mbot/#calibrating-your-mbot) again.
@@ -66,26 +66,25 @@ If for some reason your MBot is not moving correctly, ensure that you have prope
 **NOTE**: Disconnect the Lidar USB cable from the Raspberry Pi before continuing.
 
 1. **Verify Motor Mounts**: At times the motors might come loose from the mounts, for example like this:
-    <span class="image centered"><img src="/assets/images/debug/loosemotor.gif" alt="" style="max-width:200px;"/></span>
+    ![Loose motor](/assets/images/debug/loosemotor.gif){:style="width:200px;" .centered  .rd-corners}
 
     If this is the case, take the wheels off from the motor and tighten the screws that secure the motor in the mount.
 
-
-    <span class="image centered"><img src="/assets/images/debug/motorscrews.jpg" alt="" style="max-width:200px;"/></span>
+    ![Motor screws](/assets/images/debug/motorscrews.jpg){:style="width:200px;" .centered  .rd-corners}
 
 2. **Verify Wheel Hub Placement**: Ensure that there is a gap between the wheel hub and screws of the motor mount. Having no gap will cause the hub to rub against the screws hindering the motors from turning properly. If this is the case, you will have to loosen the screws on the hubs and pull out the wheels a little bit to create a gap.
-    <span class="image centered"><img src="/assets/images/debug/wheelspacing.png" alt="" style="max-width:600px;"/></span>
+    ![Wheel spacing](/assets/images/debug/wheelspacing.png){:style="width:600px;" .centered  .rd-corners}
 
 3. **Verify Motor Harness Housing**: Sometimes the wires of the motor harness might come loose from the black housing. This will cause an open circuit in the motor harness causing the motors to behave improperly. If this is the case, disconnect the harness from the encoders and push in the loose wires back into the housing. Check all 3 motors harnesses before moving on.
-    <span class="image centered"><img src="/assets/images/debug/loosewireharness.png" alt="" style="max-width:600px;"/></span>
+    ![Loose wire harness](/assets/images/debug/loosewireharness.png){:style="width:600px;" .centered  .rd-corners}
 
 
 4. **Tighten the Omniwheel Screws**: Ensure that the 4 screws holding the pair of omniwheels are secured properly. Do this for all 3 wheels.
-    <span class="image centered"><img src="/assets/images/debug/wheelscrews.jpg" alt="" style="max-width:200px;"/></span>
+    ![Loose wheel screws](/assets/images/debug/wheelscrews.jpg){:style="width:200px;" .centered  .rd-corners}
 
 5. **Run Motor Test Program**: Download the `mbot_motor_test.uf2` file from [here](https://drive.google.com/drive/folders/1sVPw5HKwVrWMN5sYUofBw1tnrrkemnmz?usp=drive_link){:target="_blank"}. Flash this to the pico and place your MBot upside down. Instructions on how to flash the Pico can be found [here](/mbot/#calibrating-your-mbot). This program will test the functionality of 3 motors, one at a time by spining them back and forth like this:
 
-    <span class="image centered"><img src="/assets/images/debug/mbotmotortest.gif" alt="" style="max-width:600px;"/></span>
+    ![Motor test](/assets/images/debug/mbotmotortest.gif){:style="width:600px;" .centered  .rd-corners}
 
     If any of the motors fail to spin, you most likely have a faulty motor. Replace this motor and repeat the Motor Test Program step.
 
@@ -94,7 +93,8 @@ If for some reason your MBot is not moving correctly, ensure that you have prope
 If all the motors are working correctly and the MBot still does not move correctly, you might have a faulty encoder. Follow these steps in order to find out which encoder on your MBot is not working correctly.
 
 1. **Verify Encoder & Magnet Placement**: Sometimes the Encoder on the back of the motors might bend causing the friction between the PCB and magnet. Ensure the ecoder is flat and that there is a small gap between the magnet and the PCB. You may have to use the pliers to pull out the magnets away from the PCB.
-    <span class="image centered"><img src="/assets/images/debug/bentencoder.png" alt="" style="max-width:600px;"/></span>
+
+    ![Bent encoder](/assets/images/debug/bentencoder.png){:style="width:600px;" .centered  .rd-corners}
 
 2. **Flashing Encoder Test Program**: Download the `mbot_encoder_test.uf2` file from [here](https://drive.google.com/drive/folders/1sVPw5HKwVrWMN5sYUofBw1tnrrkemnmz?usp=drive_link){:target="_blank"}. Flash this to the pico and place your MBot upside down. Instructions on how to flash the Pico can be found [here](/mbot/#calibrating-your-mbot).
 
@@ -102,19 +102,17 @@ If all the motors are working correctly and the MBot still does not move correct
 
 4. **Start minicom**: In the terminal type `minicom -D /dev/mbot_tty` and press enter. This will bring up the following screen:
 
-    <span class="image centered"><img src="/assets/images/debug/minicomencoder.png" alt="" style="max-width:600px;"/></span>
+    ![Minicom](/assets/images/debug/minicomencoder.png){:style="width:600px;" .centered  .rd-corners}
 
 5. **Reading Encoder Values**: You will notice there are 6 numbers on the screens. The first 3 numbers represent the delta values of each of the encoders i.e. the instantaneous change in the encoders values. While the last 3 numbers represent the total ticks for each of the encoders.
 
-    <span class="image centered"><img src="/assets/images/debug/minicomencodervalues.png" alt="" style="max-width:600px;"/></span>
+    ![Minicom encoder values](/assets/images/debug/minicomencodervalues.png){:style="width:600px;" .centered  .rd-corners}
 
 6. **Testing the Delta values of the Encoders**: One by one, rotate each wheel manually and carefully observe the changing values in the terminal. As you rotate a wheel, you will notice that the delta value will change and then drop back to zero. If you rotate the wheel in the opposite direction, you will notice that the delta values increases in opposite (negative or positive) value before dropping to zero.
 
 7. **Testing the total ticks of the Encoders**: Rotate the wheel again and notice the total ticks value. This value increase and accumulates as you continue to rotate, unlike the delta values. Now rotate the wheel in the opposite direction and you should see the value drecease (or increase) back to zero.
 
 [You can watch this video](https://photos.app.goo.gl/475CXuh7fRVHMS9d8){:target="_blank"} which shows the behavior of steps 5 & 6. If you do not see this on your MBot, then you have a faulty encoder and you will have to replace the both the motor and the encoder.
-
-
 
 
 ---
@@ -133,11 +131,11 @@ lcm-spy
 
 You should see a window that looks like this:
 
-<span class="image centered"><img src="/assets/images/debug/lcm-spy.png" alt="" style="max-width:600px;"/></span>
+![LCM Spy window](/assets/images/debug/lcm-spy.png){:style="width:600px;" .centered  .rd-corners}
 
 You can also double click on a channel to see the data that's being published.
 
-<span class="image centered"><img src="/assets/images/debug/lcm-spy-details.png" alt="" style="max-width:600px;"/></span>
+![LCM Spy data](/assets/images/debug/lcm-spy-details.png){:style="width:600px;" .centered  .rd-corners}
 
 <ul class="hint">
     <li class="icon solid fa-cogs"><strong>Hint:</strong> If you don't see the types defined beside each of the channels in LCM Spy, your <code>CLASSPATH</code> variable might not be sent correctly. See the instructions in <a href="https://github.com/MBot-Project-Development/mbot_lcm_base" target="_blank">LCM base</a> repo for how to set it to find the messages.</li>
