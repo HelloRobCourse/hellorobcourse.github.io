@@ -245,7 +245,11 @@ lang-toggle: true
 
   <h3 id="sec_robot">Path Planning on the Robot</h3>
 
-  <p>You will write code to search for and drive along a path on the robot in the file <span class="cpp-content"><code>src/robot_plan_path.cpp</code></span><span class="python-content"><code>robot_plan_path.py</code></span>. We use the <a href="/mbot/bridge-api">MBot API</a> to send the robot a path to follow.Modify the provided code template to call your path planning algorithm and then send the path to the robot.</p>
+  <p>You will write code to search for and drive along a path on the robot in the file <span class="cpp-content"><code>src/robot_plan_path.cpp</code></span><span class="python-content"><code>robot_plan_path.py</code></span>. We use the <a href="/mbot/bridge-api">MBot API</a> to send the robot a path to follow. Modify the provided code template to call your path planning algorithm and then send the path to the robot. It will look something like this:</p>
+
+  <p>
+    <iframe style="max-width: 100%;" class="centered" width="560" height="315" src="https://www.youtube.com/embed/jgnKnwDUdIU?si=NVFlANd39LccxmO-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </p>
 
   <p><strong>Note:</strong> The utility function <code>loadFromFile()</code> initializes the radius for collision checking to the robot radius, stored in variable <code>ROBOT_RADIUS</code>, plus the width of one cell. You might want to make the collision radius larger on the robot, so that your planner is more conservative on the robot.
     <span class="cpp-content">To do this modify the value of <code>graph.collision_radius</code> after the map is loaded.</span>
