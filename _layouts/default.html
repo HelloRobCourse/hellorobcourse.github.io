@@ -75,13 +75,18 @@
                       <span class="opener">Current Offerings</span>
                       <ul>
                         {% for course in current_courses %}
-                          <li><a href="{{ course.website }}" target="_blank">
+                          <li>
+                          {% if course.website %}
+                            <a href="{{ course.website }}" target="_blank">
+                          {% else %}
+                            <a href="#">
+                          {% endif %}
                             {% if course.short-name %}
                             {{ course.short-name }}
                             {% else %}
                               {{ course.institution }} ({{ course.semester }})
                             {% endif %}
-                          </a></li>
+                        </a></li>
                         {% endfor %}
                       </ul>
                     </li>
