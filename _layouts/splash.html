@@ -10,6 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/splash.css" />
     <link rel="shortcut icon" type="image/png" href="/assets/images/icon.png"/>
 
     <!-- Syntax highlighting -->
@@ -21,17 +22,33 @@
     <!-- Wrapper -->
       <div id="wrapper">
 
+        <div id="masthead">
+          <div class="inner">
+            <header id="header">
+              <a href="/" class="logo"><strong>Hello, Robot!</strong> Introduction to AI and Programming</a>
+              <ul class="icons">
+                <li><a href="https://github.com/HelloRobCourse/" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+              </ul>
+            </header>
+          </div>
+
+        </div>
+
+        <div id="splash-banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ page.header.overlay_image }}');">
+          <div class="inner">
+            <h1><strong>Hello, Robot!</strong> Intro to AI and Programming</h1>
+            <p>An open-source introductory course on programming through the lens of robotics and AI.</p>
+            <p>Learn how to code by making robots navigate autonomously!</p>
+            <ul class="actions banner">
+              <li><a href="/learn" class="button light">Learn More</a></li>
+            </ul>
+          </div>
+
+        </div>
+
         <!-- Main -->
           <div id="main">
             <div class="inner">
-
-            <!-- Header -->
-              <header id="header">
-                <a href="/" class="logo"><strong>Hello, Robot!</strong> Introduction to AI and Programming</a>
-                <ul class="icons">
-                  <li><a href="https://github.com/HelloRobCourse/" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-                </ul>
-              </header>
 
             <!-- Content -->
               <div class="content">
@@ -43,8 +60,6 @@
             </div>
           </div>
 
-        <!-- Sidebar -->
-          {% include sidenav.html %}
         </div>
       </div>
 
@@ -52,9 +67,6 @@
       <script src="/assets/js/jquery.min.js"></script>
       <script src="/assets/js/browser.min.js"></script>
       <script src="/assets/js/breakpoints.min.js"></script>
-      {% if page.lang-toggle %}
-      <script src="/assets/js/toggle_lang.js"></script>
-      {% endif %}
       <script src="/assets/js/util.js"></script>
       <script src="/assets/js/main.js"></script>
       <script>hljs.highlightAll();</script>
