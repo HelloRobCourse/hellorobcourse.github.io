@@ -4,9 +4,6 @@ course_information: true
 ---
 
 <section>
-    <p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/jZ0U339ewKo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </p>
 
     <p><strong>
       Learn how to code by making robots navigate autonomously!
@@ -31,27 +28,8 @@ course_information: true
     </p>
 
     <p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/XN5VHmK1mTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" style="max-width: 100%;" class="centered" src="https://www.youtube.com/embed/XN5VHmK1mTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </p>
-
-    {% assign current_courses = site.courses | where: 'active', true %}
-    {% assign past_courses = site.courses | where: 'active', false %}
-
-    <h2>Current Course Offerings</h2>
-
-    <ul>
-      {% for course in current_courses %}
-        <li>{{ course }}</li>
-      {% endfor %}
-    </ul>
-
-    <h2>Past Course Offerings</h2>
-
-    <ul>
-      {% for course in past_courses %}
-        <li>{{ course }}</li>
-      {% endfor %}
-    </ul>
 
 </section>
 

@@ -1,54 +1,21 @@
 ---
 layout: splash
 header:
-  overlay_image: /assets/images/pitch.png
+  overlay_image: /assets/images/pitch.jpg
 ---
 
 <section>
     <p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/jZ0U339ewKo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </p>
-
-    <p>
       <strong>Hello, Robot!</strong> <em>Introduction to AI and Programming</em> is a course about autonomous navigation algorithms for mobile robots. Students are introduced to the foundations of AI and programming by implementing algorithms for autonomous omni-drive robots.
     </p>
 
-    <p>Students in the course will complete projects throughout the semester which provide exposure to foundational concepts in autonomous decision making, including:</p>
-    <ul>
-      <li>Controlling an omni-drive robot,</li>
-      <li>Reading and processing robot sensor data,</li>
-      <li>Wall following using feedback control,</li>
-      <li>Local navigation using finite state machines,</li>
-      <li>Pathfinding using graph search algorithms,</li>
-      <li>Image classification using machine learning.</li>
-    </ul>
-
     <p>
-      This course is offered as Robotics 102 at the University of Michigan and is a new course being offered as part of the emerging Michigan Robotics Undergraduate Program. The course is also offered at other institutions as part of a Distributed Teaching Collaborative.
+      This course is offered as Robotics 102 at the University of Michigan and is being offered as part of the emerging <a href="https://robotics.umich.edu/academics/undergraduate/" target="_blank">Michigan Robotics Undergraduate Program</a>. The course is also offered at other institutions as part of a Distributed Teaching Collaborative.
     </p>
 
     <p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/XN5VHmK1mTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="560" height="315" style="max-width: 100%;" class="centered" src="https://www.youtube.com/embed/jZ0U339ewKo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </p>
-
-    {% assign current_courses = site.courses | where: 'active', true %}
-    {% assign past_courses = site.courses | where: 'active', false %}
-
-    <h2>Current Course Offerings</h2>
-
-    <ul>
-      {% for course in current_courses %}
-        <li>{{ course }}</li>
-      {% endfor %}
-    </ul>
-
-    <h2>Past Course Offerings</h2>
-
-    <ul>
-      {% for course in past_courses %}
-        <li>{{ course }}</li>
-      {% endfor %}
-    </ul>
 
 </section>
 
