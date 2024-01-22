@@ -65,7 +65,7 @@ Each robot should be marked with a unique, three-digit ID, plus a prefix (001, 0
 
 To configure a new robot, you must first flash a new SD card with the robot's image. You will need:
 1. A way to read and write to a Micro SD card (you can use a laptop with an SD card slot or a USB adapter),
-2. The latest version of the [HelloRob RPi OS Image](https://drive.google.com/drive/folders/1NCLzH3KEpuqEV0LdHzwZG5OHd8vmD7jt?usp=drive_link){:target="_blank"} (check with your instructor to make sure they do not have a custom image for you to use).
+2. The latest version of the [HelloRob RPi OS Image](https://drive.google.com/drive/folders/1YYgyc9G9xhqRrBxIb9auFy3BK36FduWI?usp=drive_link){:target="_blank"} (check with your instructor to make sure they do not have a custom image for you to use).
 
 To flash the image, follow these instructions:
 
@@ -130,7 +130,7 @@ Your course staff will provide this information to you. You will also need a way
 ## Calibrating your MBot
 {: .line }
 
-[[MBot Firmware Files](https://drive.google.com/drive/folders/1sVPw5HKwVrWMN5sYUofBw1tnrrkemnmz?usp=drive_link){:target="_blank"}]
+[[MBot Firmware Files](https://drive.google.com/drive/folders/1QEVK5brul6_gTO8LTXsH8Qv_YbY0GVBL?usp=drive_link){:target="_blank"}]
 
 Each robot needs to be individually calibrated in order to control it. Once it's calibrated, the firmware can be flashed onto the robot. You will need to flash programs onto the Pico to calibrate and load the firmware onto your robot. To do this, you should connect to the robot using a program called NoMachine, that allows you to view the robot's desktop from your laptop.
 You will need:
@@ -144,7 +144,7 @@ You will need:
         ![NoMachine Add Host](/assets/images/mbot/nomachine-add-host.jpg){:style="width:800px;" .centered .rd-corners}
         Then, connect to the robot in NoMachine using the robot's *username* and *password* (the default username is `mbot` and the password is `i<3robots!`):
         ![NoMachine Connect Host](/assets/images/mbot/nomachine-login.jpg){:style="width:800px;" .centered .rd-corners}
-    2. Download the MBot firmware from [here](https://drive.google.com/drive/folders/1sVPw5HKwVrWMN5sYUofBw1tnrrkemnmz?usp=drive_link){:target="_blank"}. You will need the `mbot_calibrate_omni.uf2` and `mbot.uf2` files. Downloading the tests is optional.
+    2. Download the MBot firmware from [here](https://drive.google.com/drive/folders/1QEVK5brul6_gTO8LTXsH8Qv_YbY0GVBL?usp=drive_link){:target="_blank"}. You will need the `mbot_calibrate_omni.uf2` and `mbot.uf2` files. Downloading the tests is optional.
     3. Drag and drop the two files from your laptop to the robot's desktop using NoMachine.
 
 2. **Calibrate the MBot.** We will now flash the calibration script onto the Pico to calibrate it before we flash it.
