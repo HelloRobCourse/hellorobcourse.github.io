@@ -9,8 +9,9 @@ has_toc: false
 
 ## Setup Guides & Tools
 - [Computer Setup](/tutorials/setup.html)
-- [Github](/tutorials/git.html)
-- [Replit](/tutorials/replit.html)
+- [GitHub](/tutorials/git.html)
+- [GitHub Classroom](/tutorials/github-classroom)
+- [Replit](/tutorials/replit.html) **[Deprecated]**
 
 ## Course Infrastructure
 - [Navigation Webapp](/tutorials/app.html)
