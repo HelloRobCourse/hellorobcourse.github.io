@@ -27,10 +27,10 @@ If your instructor has given you an assignment link for the practice code, use t
 
 | Topic | Checkpoints |
 | ------| ---------- |
-| Hello World! (compiling, executing, printing) [[Lecture Video](https://www.youtube.com/watch?v=nKu9H-CeptI), [Slides](https://drive.google.com/file/d/1O3lS9L1NqYID0yMjzrJC3iJMm9TqDyDU/view?usp=sharing)] | Hello World |
-| Operators and Variables       [[Lecture Video](https://youtu.be/Vvys7lZa764), [Slides](https://drive.google.com/file/d/14XykOCt7tqCxdsuvFN-0G37T0LvOR5F7/view?usp=sharing)] | Mathler <br/> *Practice (optional)* [[GitHub link](https://github.com/HelloRobCourse/m0-practice/blob/main/variables_operators.cpp)]                     |
+| Hello World! (compiling, executing, printing) [[Lecture Video](https://www.youtube.com/watch?v=nKu9H-CeptI), [Slides](https://drive.google.com/file/d/1O3lS9L1NqYID0yMjzrJC3iJMm9TqDyDU/view?usp=sharing)] | [Hello World](#hello-world) |
+| Operators and Variables       [[Lecture Video](https://youtu.be/Vvys7lZa764), [Slides](https://drive.google.com/file/d/14XykOCt7tqCxdsuvFN-0G37T0LvOR5F7/view?usp=sharing)] | [Mathler](#mathler) <br/> *Practice (optional)* [[GitHub link](https://github.com/HelloRobCourse/m0-practice/blob/main/variables_operators.cpp)]                     |
 | Functions [[Lecture Video](https://www.youtube.com/watch?v=ZarKDScV_DQ), [Slides](https://drive.google.com/file/d/1SERC4e5agAUcuUXxjRklMkYcmoGNlyRY/view?usp=sharing)] | *Practice (optional)* [[GitHub link](https://github.com/HelloRobCourse/m0-practice/blob/main/functions.cpp)]                                   |
-| Branching and Iterators  [[Lecture Video](https://www.youtube.com/watch?v=W9g1TxN35Vs), [Slides](https://drive.google.com/file/d/1zwA0EzbwH-yCbDLOflduf7Ur37MDywqP/view?usp=sharing)] | Calculator Operation <br/>  *Practice (optional)* [[GitHub link](https://github.com/HelloRobCourse/m0-practice/blob/main/branching_loops.cpp)]                         |
+| Branching and Iterators  [[Lecture Video](https://www.youtube.com/watch?v=W9g1TxN35Vs), [Slides](https://drive.google.com/file/d/1zwA0EzbwH-yCbDLOflduf7Ur37MDywqP/view?usp=sharing)] | [Calculator Operation](#calculator-operation) <br/>  *Practice (optional)* [[GitHub link](https://github.com/HelloRobCourse/m0-practice/blob/main/branching_loops.cpp)]                         |
 | Vectors and Structs  [[Lecture Video](https://www.youtube.com/watch?v=4Hfr6zcVHFo), [Slides](https://drive.google.com/file/d/1e5n7GW69icHEU6NihUd4I7p7vlNpd9zk/view?usp=sharing)] | *Practice (optional)* [[GitHub link](https://github.com/HelloRobCourse/m0-practice/blob/main/vectors.cpp)]                                   |
 
 ## Programming in C++
