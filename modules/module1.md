@@ -22,7 +22,8 @@ Module 1
 ## Lectures
 {: .line}
 
-For these lectures, some checkpoints are run on the robot, and others are C++ checkpoints that can be run on your computer. Watch the corresponding lecture before completing the checkpoint.
+For these lectures, some checkpoints are run on the robot, and others are C++ checkpoints that can be run on your computer.
+Watch the corresponding lecture before completing the checkpoint.
 
 | Topic | Checkpoints |
 | ------| ----------- |
