@@ -1,8 +1,4 @@
 ---
-title: Staff
-description: >-
-    Documentation for course staff.
-has_toc: false
+layout: redirect
+address: https://mbot.robotics.umich.edu/docs/
 ---
-
-# Staff Guides
