@@ -4,7 +4,7 @@ An introductory programming and AI course through the lens of robotics developed
 
 ## Credits
 - Chad Jenkins, Associate Director of Undergraduate Programs, Michigan Robotics
-- Jana Pavlasek, Director, Michigan Robotics
+- Jana Pavlasek
 - Jasmine Jones, Berea College
 - Jan Pearce, Berea College
 - Tom Gao
